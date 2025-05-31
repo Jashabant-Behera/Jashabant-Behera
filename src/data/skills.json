@@ -1,0 +1,83 @@
+{
+  "skills": {
+    "technical": [
+       {
+        "name": "JavaScript",
+        "level": "Advanced",
+        "description": "Core language used in all projects for frontend and backend logic, DOM manipulation, and APIs."
+      },
+      {
+        "name": "HTML5",
+        "level": "Advanced",
+        "description": "Structured accessible and semantic web pages across multiple responsive applications."
+      },
+      {
+        "name": "CSS3",
+        "level": "Advanced",
+        "description": "Styled custom UIs using Flexbox, Grid, animations, and responsive design techniques."
+      },
+      {
+        "name": "React.js",
+        "level": "Advanced",
+        "description": "Built dynamic UIs, implemented routing, hooks, and context API for state management."
+      },
+      {
+        "name": "Next.js",
+        "level": "Learning",
+        "description": "Used for SSR/SSG, API routes, and deploying production-grade apps on Vercel."
+      },
+      {
+        "name": "Node.js",
+        "level": "Intermediate",
+        "description": "Built REST APIs, implemented authentication systems using JWT and handled backend logic."
+      },
+      {
+        "name": "MongoDB",
+        "level": "Learning",
+        "description": "Designed schemas, implemented CRUD operations, and integrated with Express.js backend."
+      },
+      {
+        "name": "Express.js",
+        "level": "Learning",
+        "description": "Used to build scalable backend routes, middleware, and secure API endpoints."
+      },
+      {
+        "name": "Tailwind CSS",
+        "level": "Intermediate",
+        "description": "Created responsive UI layouts with utility-first styling and custom design systems."
+      },
+      {
+        "name": "OpenAI API",
+        "level": "Intermediate",
+        "description": "Integrated GPT models for text generation, recommendation systems, and content analysis."
+      },
+      {
+        "name": "Git & GitHub",
+        "level": "Intermediate",
+        "description": "Version control, branching strategies, and collaboration through GitHub."
+      }
+    ],
+    "soft": [
+      {
+        "name": "Leadership & Team Management",
+        "description": "Led waste management teams during internship, improving productivity by 50%."
+      },
+      {
+        "name": "Problem Solving",
+        "description": "Solved real-world issues in municipal sanitation and optimized user flows in apps."
+      },
+      {
+        "name": "Project Coordination",
+        "description": "Managed end-to-end development of multiple full-stack projects across frontend and backend."
+      },
+      {
+        "name": "Communication",
+        "description": "Clear communicator with multilingual fluency (Odia, Hindi, English) and client-facing experience."
+      },
+      {
+        "name": "Adaptability",
+        "description": "Quick learner who rapidly adapts to new tech stacks and project requirements."
+      }
+    ]
+  }
+}

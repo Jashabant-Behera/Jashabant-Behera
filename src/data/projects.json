@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Kanban Board",
+    "description": "Task management board with drag-and-drop functionality, column-based organization, and GitHub Pages deployment.",
+    "tags": ["React.js", "HTML", "Tailwind CSS"],
+    "image": "/images/projects/kanban.jpg",
+    "github": "https://github.com/Jashabant-Behera/Kanban-Board",
+    "demo": "https://jashabant-behera.github.io/Kanban-Board"
+  },
+  {
+    "id": 2,
+    "title": "ProFile-AI",
+    "description": "AI-powered resume analyzer that provides ATS-compliance checks and generates tailored cover letters using OpenAI.",
+    "tags": ["Next.js", "OpenAI API", "Supabase", "Render", "Vercel"],
+    "image": "/images/projects/profile-ai.jpg",
+    "github": "https://github.com/Jashabant-Behera/ProFile-AI",
+    "demo": "https://profile-ai.vercel.app"
+  },
+  {
+    "id": 3,
+    "title": "Ape-Authorization",
+    "description": "Modern authentication system using JWT and cookies with support for persistent login, OTP verification, and secure API architecture.",
+    "tags": ["Next.js", "JWT", "Node.js", "Express"],
+    "image": "/images/projects/ape-auth.jpg",
+    "github": "https://github.com/Jashabant-Behera/Ape-Authorization",
+    "demo": "https://ape-auth.up.railway.app"
+  },
+  {
+    "id": 4,
+    "title": "AI-Powered Travel Guide",
+    "description": "Smart travel planner that generates personalized itineraries, cultural recommendations, and location insights using AI.",
+    "tags": ["React.js", "Node.js", "OpenAI", "MongoDB", "Google Maps API"],
+    "image": "/images/projects/ai-travel.jpg",
+    "github": "https://github.com/Jashabant-Behera/AI-Travel-Guide",
+    "demo": "https://ai-travel-planner.vercel.app"
+  }
+]
