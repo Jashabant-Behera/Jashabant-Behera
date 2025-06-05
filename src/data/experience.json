@@ -1,12 +1,21 @@
 [
   {
-    "role": "TULIP Intern",
-    "company": "Koraput Municipality",
-    "period": "DEC 2022 - DEC 2024",
+    "role": "Sanitation & Operations Intern",
+    "company": "Koraput Municipality – TULIP (Govt. of India)",
+    "period": "Dec 2022 – Dec 2024",
     "achievements": [
-      "Managed sanitation section, improving cleanliness compliance by 20%",
-      "Optimized waste collection processes increasing efficiency by 15%",
-      "Boosted organic compost sales by 10% through cross-department collaboration"
+      "Led daily operations of waste management centers under the Urban Learning Internship Program (TULIP).",
+      "Implemented process improvements that enhanced center productivity by over 50%.",
+      "Collaborated with municipal staff and community groups to optimize collection routes and resource usage.",
+      "Contributed to the digital documentation and reporting of sanitation KPIs.",
+      "Gained real-world exposure to urban governance, logistics, and citizen service delivery."
+    ],
+    "technologies": [
+      "MS Excel",
+      "Google Sheets",
+      "Data Collection",
+      "Reporting",
+      "Public Communication"
     ]
   }
 ]

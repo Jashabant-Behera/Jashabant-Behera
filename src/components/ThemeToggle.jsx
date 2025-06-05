@@ -14,7 +14,7 @@ export default function ThemeToggle() {
   if (!mounted) {
     return (
       <button className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 w-10 h-10">
-        {/* Empty placeholder while mounting */}
+
       </button>
     );
   }

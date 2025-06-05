@@ -1,23 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Bebas+Neue&family=DM+Serif+Text:ital@0;1&family=Parisienne&family=Special+Elite&display=swap");
+
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-.dark {
-  --background: #111827;
-  --foreground: #f3f4f6;
-}
-
-.dark .card {
-  background-color: #1f2937;
-  border-color: #374151;
+  .font-bebas {
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.05em;
+  }
 }
 
 :root {
   color-scheme: light;
+  --background: 255 255 255;
+  --foreground: 17 24 39;
 }
 
-.dark {
-  color-scheme: dark;
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth transitions */
+.transition-colors {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.transition-shadow {
+  transition: box-shadow 0.3s ease;
+}
+
+/* Scrollbar styling for modal */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #6b7280;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
 }

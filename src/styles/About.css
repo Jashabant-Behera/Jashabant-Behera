@@ -1,0 +1,197 @@
+.about-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 5rem 2rem;
+  background-color: #edededff;
+  min-height: 100vh;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.red-circle {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.about-img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  transform: translateX(-20px) translateY(20px);
+}
+
+.about-img,
+.red-circle,
+.about-container,
+.skill-tag {
+  will-change: transform, opacity;
+}
+
+.about-container {
+  flex: 1;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: "Antonio", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  font-family: "DM Serif Text", serif;
+}
+
+.name-highlight {
+  font-weight: 600;
+  color: #6366f1;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 1px;
+}
+
+.react-highlight {
+  font-weight: 600;
+  color: #3b82f6;
+  font-family: "Special Elite", cursive;
+}
+
+.next-highlight {
+  font-weight: 600;
+  color: #10b981;
+  font-family: "Special Elite", cursive;
+}
+
+.node-highlight {
+  font-weight: 600;
+  color: #f59e0b;
+  font-family: "Special Elite", cursive;
+}
+
+.about-subtext {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  font-family: "DM Serif Text", serif;
+  font-style: italic;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.skill-tag {
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: "Antonio", sans-serif;
+}
+
+.skill-tag:hover {
+  transform: translateY(-2px);
+}
+
+.react-tag {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.node-tag {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.mongo-tag {
+  background-color: #f0f9ff;
+  color: #0369a1;
+}
+
+.tailwind-tag {
+  background-color: #f5f3ff;
+  color: #5b21b6;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    padding: 3rem 1.5rem;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .red-circle {
+    width: 300px;
+    height: 300px;
+  }
+
+  .about-img {
+    max-width: 250px;
+  }
+
+  .about-container {
+    padding-left: 0;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+}
+
+/* Add these to your existing About.css */
+.about-section {
+  overflow: hidden;
+}
+
+.image-wrapper,
+.about-container {
+  will-change: transform, opacity;
+}
+
+.red-circle {
+  will-change: transform, opacity, scale;
+}
+
+.about-img {
+  transition: transform 0.5s ease-out;
+}
+
+.skill-tag {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+

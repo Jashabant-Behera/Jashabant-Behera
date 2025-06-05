@@ -1,26 +1,46 @@
-// src/components/Skills.jsx
-import { Code, Cpu, Database, GitMerge, Shield } from "lucide-react";
-import skillsData from "@/data/skills"; // Adjust based on whether it's .js or .json
+import {
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaServer,
+} from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiTailwindcss,
+  SiOpenai,
+  SiMongodb,
+} from "react-icons/si";
+import { DiJavascript, DiHtml5, DiCss3 } from "react-icons/di";
+import { Code, BrainCircuit } from "lucide-react";
+import skillsData from "@/data/skills";
 
-// If using JSON, access the skills property
 const skills = skillsData.skills;
 
 const skillIcons = {
-  "React.js": <Code className="text-blue-500" />,
-  "Next.js": <Cpu className="text-gray-500" />,
-  "Node.js": <Database className="text-green-500" />,
-  MongoDB: <Shield className="text-yellow-500" />,
-  "Express.js": <GitMerge className="text-purple-500" />,
-  "Tailwind CSS": <Code className="text-teal-500" />,
-  "OpenAI API": <Code className="text-indigo-500" />,
-  "Git & GitHub": <GitMerge className="text-orange-500" />,
+  JavaScript: <DiJavascript className="text-yellow-400" size={18} />,
+  HTML5: <DiHtml5 className="text-orange-500" size={18} />,
+  CSS3: <DiCss3 className="text-blue-500" size={18} />,
+  "React.js": <FaReact className="text-blue-500" size={18} />,
+  "Next.js": <SiNextdotjs className="text-gray-500" size={18} />,
+  "Node.js": <FaNodeJs className="text-green-500" size={18} />,
+  MongoDB: <SiMongodb className="text-green-600" size={18} />,
+  "Express.js": <FaServer className="text-gray-700" size={18} />,
+  "Tailwind CSS": <SiTailwindcss className="text-cyan-400" size={18} />,
+  "OpenAI API": <SiOpenai className="text-purple-500" size={18} />,
+  "Gemini API": <BrainCircuit className="text-blue-400" size={18} />,
+  "Git & GitHub": <FaGitAlt className="text-orange-600" size={18} />,
 };
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 bg-gray-50">
+    <section
+      id="skills"
+      className="py-20 bg-gray-50"
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">My Skills</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">
+          My Skills
+        </h2>
 
         {/* Technical Skills */}
         <div className="mb-16">
@@ -35,8 +55,12 @@ export default function Skills() {
                   className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100"
                 >
                   <div className="flex items-center mb-2">
-                    {skillIcons[skill.name] || <Code />}
-                    <span className="ml-2 font-medium">{skill.name}</span>
+                    {skillIcons[skill.name] || (
+                      <Code className="text-gray-500" />
+                    )}
+                    <span className="ml-2 font-medium">
+                      {skill.name}
+                    </span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
@@ -51,7 +75,12 @@ export default function Skills() {
                       }`}
                     ></div>
                   </div>
-                  <p className="text-xs text-gray-500 mt-1">{skill.level}</p>
+                  <p className="text-xs text-gray-500 mt-1">
+                    {skill.level}
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">
+                    {skill.description}
+                  </p>
                 </div>
               ))
             ) : (

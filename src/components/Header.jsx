@@ -1,59 +1,70 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo/Name */}
+    <header className="sticky top-0 z-50 bg-white/30 dark:bg-gray-900/30 backdrop-blur-lg ">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+        {/* Logo/Name with custom font */}
         <Link
           href="/"
-          className="text-xl font-bold text-gray-900 hover:text-indigo-600"
+          className="text-2xl font-bold text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-bebas tracking-wide"
         >
-          YourName
+          JB
         </Link>
 
         {/* Navigation Links */}
-        <nav className="hidden md:flex gap-6">
-          <Link href="/" className="text-gray-600 hover:text-indigo-600">
+        <nav className="hidden md:flex gap-8">
+          <Link 
+            href="/" 
+            className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium"
+          >
             Home
           </Link>
           <Link
             href="/projects"
-            className="text-gray-600 hover:text-indigo-600"
+            className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium"
           >
             Projects
           </Link>
-          <Link href="/about" className="text-gray-600 hover:text-indigo-600">
+          <Link 
+            href="/about" 
+            className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium"
+          >
             About
           </Link>
-          <Link href="/contact" className="text-gray-600 hover:text-indigo-600">
+          <Link 
+            href="/contact" 
+            className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium"
+          >
             Contact
           </Link>
         </nav>
 
         {/* Social Icons */}
-        <div className="flex gap-4">
+        <div className="flex items-center gap-4">
           <a
             href="https://github.com/yourusername"
             target="_blank"
-            className="text-gray-500 hover:text-gray-900 p-2"
+            rel="noopener noreferrer"
+            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white p-2 rounded-full hover:bg-white/20 dark:hover:bg-gray-700/30 transition-all"
           >
-            <Github size={20} />
+            <FaGithub size={20} />
           </a>
           <a
             href="https://linkedin.com/in/yourusername"
             target="_blank"
-            className="text-gray-500 hover:text-blue-600 p-2"
+            rel="noopener noreferrer"
+            className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 p-2 rounded-full hover:bg-white/20 dark:hover:bg-gray-700/30 transition-all"
           >
-            <Linkedin size={20} />
+            <FaLinkedin size={20} />
           </a>
           <a
             href="mailto:you@example.com"
-            className="text-gray-500 hover:text-red-500 p-2"
+            className="text-gray-600 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400 p-2 rounded-full hover:bg-white/20 dark:hover:bg-gray-700/30 transition-all"
           >
-            <Mail size={20} />
+            <FaEnvelope size={20} />
           </a>
           <ThemeToggle />
         </div>

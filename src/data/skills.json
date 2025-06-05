@@ -1,7 +1,7 @@
 {
   "skills": {
     "technical": [
-       {
+      {
         "name": "JavaScript",
         "level": "Advanced",
         "description": "Core language used in all projects for frontend and backend logic, DOM manipulation, and APIs."
@@ -49,6 +49,11 @@
       {
         "name": "OpenAI API",
         "level": "Intermediate",
+        "description": "Integrated GPT models for text generation, recommendation systems, and content analysis."
+      },
+      {
+        "name": "Gemini API",
+        "level": "Learning",
         "description": "Integrated GPT models for text generation, recommendation systems, and content analysis."
       },
       {

@@ -1,38 +1,51 @@
 [
   {
     "id": 1,
-    "title": "Kanban Board",
-    "description": "Task management board with drag-and-drop functionality, column-based organization, and GitHub Pages deployment.",
-    "tags": ["React.js", "HTML", "Tailwind CSS"],
-    "image": "/images/projects/kanban.jpg",
-    "github": "https://github.com/Jashabant-Behera/Kanban-Board",
-    "demo": "https://jashabant-behera.github.io/Kanban-Board"
+    "title": "AI-Powered Travel Guide",
+    "description": "Smart travel planner that generates personalized itineraries, cultural recommendations, and location insights using AI.",
+    "tags": ["React.js", "Node.js", "OpenAI", "MongoDB", "Google Maps API"],
+    "images": [
+      "/images/projects/ai-travel-1.jpg",
+      "/images/projects/ai-travel-2.jpg",
+      "/images/projects/ai-travel-3.jpg"
+    ],
+    "github": "https://github.com/Jashabant-Behera/AI-Travel-Guide",
+    "demo": "https://ai-travel-planner.vercel.app"
   },
   {
     "id": 2,
     "title": "ProFile-AI",
-    "description": "AI-powered resume analyzer that provides ATS-compliance checks and generates tailored cover letters using OpenAI.",
-    "tags": ["Next.js", "OpenAI API", "Supabase", "Render", "Vercel"],
-    "image": "/images/projects/profile-ai.jpg",
+    "description": "Resume analyzer and AI-based cover letter generator that ensures ATS-friendly formatting using OpenAI and Supabase.",
+    "tags": ["Next.js", "Node.js", "OpenAI", "Supabase", "PDF Parse"],
+    "images": [
+      "/images/projects/profile-ai-1.jpg",
+      "/images/projects/profile-ai-2.jpg"
+    ],
     "github": "https://github.com/Jashabant-Behera/ProFile-AI",
     "demo": "https://profile-ai.vercel.app"
   },
   {
     "id": 3,
-    "title": "Ape-Authorization",
-    "description": "Modern authentication system using JWT and cookies with support for persistent login, OTP verification, and secure API architecture.",
-    "tags": ["Next.js", "JWT", "Node.js", "Express"],
-    "image": "/images/projects/ape-auth.jpg",
+    "title": "Ape Authorization",
+    "description": "Authentication and role-based access system using Next.js and custom JWT auth with token persistence and role control.",
+    "tags": ["Next.js", "Express", "JWT", "MongoDB"],
+    "images": [
+      "/images/projects/ape-auth-1.jpg",
+      "/images/projects/ape-auth-2.jpg"
+    ],
     "github": "https://github.com/Jashabant-Behera/Ape-Authorization",
-    "demo": "https://ape-auth.up.railway.app"
+    "demo": "https://ape-auth-demo.vercel.app"
   },
   {
     "id": 4,
-    "title": "AI-Powered Travel Guide",
-    "description": "Smart travel planner that generates personalized itineraries, cultural recommendations, and location insights using AI.",
-    "tags": ["React.js", "Node.js", "OpenAI", "MongoDB", "Google Maps API"],
-    "image": "/images/projects/ai-travel.jpg",
-    "github": "https://github.com/Jashabant-Behera/AI-Travel-Guide",
-    "demo": "https://ai-travel-planner.vercel.app"
+    "title": "Kanban Board",
+    "description": "Trello-style Kanban board for task management with drag-and-drop, persistence, and responsive UI for portfolio showcase.",
+    "tags": ["React.js", "Tailwind CSS", "Framer Motion"],
+    "images": [
+      "/images/projects/kanban-1.jpg",
+      "/images/projects/kanban-2.jpg"
+    ],
+    "github": "https://github.com/Jashabant-Behera/Kanban-Board",
+    "demo": "https://kanban-jashabant.vercel.app"
   }
 ]
