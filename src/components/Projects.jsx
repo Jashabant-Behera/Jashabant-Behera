@@ -2,49 +2,137 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { SiGithub } from "react-icons/si";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import projects from "@/data/projects";
 import "../styles/Projects.css";
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Projects() {
   const [expandedProject, setExpandedProject] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const projectsRef = useRef(null);
+  const projectCardsRef = useRef([]);
+
+  // Initialize GSAP animations
+  useEffect(() => {
+    // Animate project cards on scroll
+    projectCardsRef.current.forEach((card, index) => {
+      gsap.from(card, {
+        opacity: 0,
+        y: 50,
+        duration: 0.6,
+        delay: index * 0.1,
+        scrollTrigger: {
+          trigger: card,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+
+    // Animate section title
+    gsap.from(".projects-title", {
+      opacity: 0,
+      y: 40,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: ".projects-section",
+        start: "top 80%",
+        toggleActions: "play none none none"
+      }
+    });
+
+    // Clean up ScrollTrigger instances
+    return () => {
+      ScrollTrigger.getAll().forEach(instance => instance.kill());
+    };
+  }, []);
 
   const openProject = (id) => {
-    setExpandedProject(id);
-    setCurrentImageIndex(0);
+    // GSAP animation for opening project
+    gsap.to(".project-modal", {
+      opacity: 0,
+      scale: 0.95,
+      duration: 0.2,
+      onComplete: () => {
+        setExpandedProject(id);
+        setCurrentImageIndex(0);
+        gsap.fromTo(".project-modal",
+          { opacity: 0, scale: 0.95 },
+          { opacity: 1, scale: 1, duration: 0.3 }
+        );
+      }
+    });
   };
 
   const closeProject = () => {
-    setExpandedProject(null);
+    // GSAP animation for closing project
+    gsap.to(".project-modal", {
+      opacity: 0,
+      scale: 0.95,
+      duration: 0.2,
+      onComplete: () => {
+        setExpandedProject(null);
+      }
+    });
   };
 
   const nextImage = () => {
-    setCurrentImageIndex(
-      (prev) =>
-        (prev + 1) %
-        projects.find((p) => p.id === expandedProject).images.length
-    );
+    // GSAP animation for image transition
+    gsap.to(".project-modal-image", {
+      opacity: 0,
+      x: 50,
+      duration: 0.2,
+      onComplete: () => {
+        setCurrentImageIndex(
+          (prev) =>
+            (prev + 1) %
+            projects.find((p) => p.id === expandedProject).images.length
+        );
+        gsap.fromTo(".project-modal-image",
+          { opacity: 0, x: -50 },
+          { opacity: 1, x: 0, duration: 0.3 }
+        );
+      }
+    });
   };
 
   const prevImage = () => {
-    setCurrentImageIndex(
-      (prev) =>
-        (prev -
-          1 +
-          projects.find((p) => p.id === expandedProject).images.length) %
-        projects.find((p) => p.id === expandedProject).images.length
-    );
+    // GSAP animation for image transition
+    gsap.to(".project-modal-image", {
+      opacity: 0,
+      x: -50,
+      duration: 0.2,
+      onComplete: () => {
+        setCurrentImageIndex(
+          (prev) =>
+            (prev - 1 +
+              projects.find((p) => p.id === expandedProject).images.length) %
+            projects.find((p) => p.id === expandedProject).images.length
+        );
+        gsap.fromTo(".project-modal-image",
+          { opacity: 0, x: 50 },
+          { opacity: 1, x: 0, duration: 0.3 }
+        );
+      }
+    });
+  };
+
+  // Add project card to ref array
+  const addToRefs = (el) => {
+    if (el && !projectCardsRef.current.includes(el)) {
+      projectCardsRef.current.push(el);
+    }
   };
 
   return (
-    <section id="projects" className="projects-section">
+    <section id="projects" className="projects-section" ref={projectsRef}>
       <div className="projects-container">
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
           className="projects-title"
         >
           Technical Projects
@@ -54,10 +142,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
+              ref={addToRefs}
               whileHover={{ y: -5 }}
               className="project-card"
             >
@@ -138,9 +223,6 @@ export default function Projects() {
               onClick={closeProject}
             >
               <motion.div
-                initial={{ scale: 0.9 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0.9 }}
                 className="project-modal"
                 onClick={(e) => e.stopPropagation()}
               >
