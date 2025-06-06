@@ -94,24 +94,6 @@ const About = () => {
       });
     });
 
-    const skillTags = gsap.utils.toArray(".skill-tag");
-    skillTags.forEach((tag, i) => {
-      ScrollTrigger.create({
-        trigger: tag,
-        start: "top 90%",
-        onEnter: () => {
-          gsap.fromTo(
-            tag,
-            { x: i % 2 ? 50 : -50, opacity: 0 },
-            { x: 0, opacity: 1, duration: 0.6, delay: i * 0.1 }
-          );
-        },
-        onLeaveBack: () => {
-          gsap.to(tag, { x: i % 2 ? 50 : -50, opacity: 0, duration: 0.4 });
-        },
-      });
-    });
-
     return () => ScrollTrigger.getAll().forEach((t) => t.kill());
   }, []);
 

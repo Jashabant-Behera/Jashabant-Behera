@@ -24,7 +24,7 @@ export default function Experience() {
 
                 <div className="md:w-1/3 bg-gray-100 overflow-hidden">
                   <img
-                    src="/SWM.jpg"
+                    src="/exp/SWM.jpg"
                     alt="swm"
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
