@@ -13,16 +13,14 @@ export default function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <button className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 w-10 h-10">
-
-      </button>
+      <button className="p-2 rounded-full hover:bg-gray-200 transition-colors duration-200 w-10 h-10"></button>
     );
   }
 
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+      className="p-2 rounded-full hover:bg-gray-200  transition-colors duration-200"
       aria-label="Toggle Dark Mode"
     >
       {theme === "dark" ? (

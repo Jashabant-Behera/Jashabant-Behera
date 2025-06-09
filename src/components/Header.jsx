@@ -1,54 +1,37 @@
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import ThemeToggle from "./ThemeToggle";
+import "../styles/Header.css"; // Adjust the path as necessary
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-white/30 dark:bg-gray-900/30 backdrop-blur-lg ">
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        {/* Logo/Name with custom font */}
-        <Link
-          href="/"
-          className="text-2xl font-bold text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-bebas tracking-wide"
-        >
+    <header className="header">
+      <div className="header-container">
+        <Link href="/" className="logo">
           JB
         </Link>
 
-        {/* Navigation Links */}
-        <nav className="hidden md:flex gap-8">
-          <Link 
-            href="/" 
-            className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium"
-          >
+        <nav className="nav-links">
+          <Link href="/" className="nav-link">
             Home
           </Link>
-          <Link
-            href="/projects"
-            className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium"
-          >
+          <Link href="#projects" className="nav-link">
             Projects
           </Link>
-          <Link 
-            href="/about" 
-            className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium"
-          >
+          <Link href="#about" className="nav-link">
             About
           </Link>
-          <Link 
-            href="/contact" 
-            className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium"
-          >
+          <Link href="#contact" className="nav-link">
             Contact
           </Link>
         </nav>
 
-        {/* Social Icons */}
-        <div className="flex items-center gap-4">
+        <div className="social-icons">
           <a
             href="https://github.com/yourusername"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white p-2 rounded-full hover:bg-white/20 dark:hover:bg-gray-700/30 transition-all"
+            className="social-icon github-icon"
           >
             <FaGithub size={20} />
           </a>
@@ -56,13 +39,13 @@ export default function Header() {
             href="https://linkedin.com/in/yourusername"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 p-2 rounded-full hover:bg-white/20 dark:hover:bg-gray-700/30 transition-all"
+            className="social-icon linkedin-icon"
           >
             <FaLinkedin size={20} />
           </a>
           <a
             href="mailto:you@example.com"
-            className="text-gray-600 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400 p-2 rounded-full hover:bg-white/20 dark:hover:bg-gray-700/30 transition-all"
+            className="social-icon email-icon"
           >
             <FaEnvelope size={20} />
           </a>

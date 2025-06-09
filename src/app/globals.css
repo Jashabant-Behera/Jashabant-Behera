@@ -1,7 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Bebas+Neue&family=DM+Serif+Text:ital@0;1&family=Parisienne&family=Special+Elite&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 @import "tailwindcss";
+
+:root {
+  color-scheme: light;
+
+  --color-bg: #ffffff;
+  --color-text: #111827;
+  --color-accent: #ff5429ff;
+  --color-subtle-gray: #edededff;
+  --color-muted: #888888;
+  --color-muted-hover: #555555;
+
+
+  --scroll-track: #f1f1f1;
+  --scroll-thumb: #888;
+  --scroll-thumb-hover: #555;
+}
 
 @layer base {
   html {
@@ -12,12 +28,26 @@
     font-family: "Bebas Neue", sans-serif;
     letter-spacing: 0.05em;
   }
-}
 
-:root {
-  color-scheme: light;
-  --background: 255 255 255;
-  --foreground: 17 24 39;
+  .font-rubik {
+    font-family: "Rubik", sans-serif;
+  }
+
+  .font-serif {
+    font-family: "DM Serif Text", serif;
+  }
+
+  .font-antonio {
+    font-family: "Antonio", sans-serif;
+  }
+
+  .font-script {
+    font-family: "Parisienne", cursive;
+  }
+
+  .font-typewriter {
+    font-family: "Special Elite", monospace;
+  }
 }
 
 .line-clamp-2 {
@@ -26,7 +56,6 @@
   overflow: hidden;
 }
 
-/* Smooth transitions */
 .transition-colors {
   transition: color 0.2s ease, background-color 0.2s ease;
 }
@@ -35,33 +64,20 @@
   transition: box-shadow 0.3s ease;
 }
 
-/* Scrollbar styling for modal */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--scroll-track);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: var(--scroll-thumb);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.dark ::-webkit-scrollbar-track {
-  background: #374151;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-  background: #6b7280;
-}
-
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: #9ca3af;
+  background: var(--scroll-thumb-hover);
 }

@@ -6,9 +6,8 @@ import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import projects from "@/data/projects";
-import "../styles/Projects.css";
+import "@/styles/Projects.css";
 
-// Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Projects() {
@@ -17,24 +16,10 @@ export default function Projects() {
   const projectsRef = useRef(null);
   const projectCardsRef = useRef([]);
 
-  // Initialize GSAP animations
   useEffect(() => {
-    // Animate project cards on scroll
-    projectCardsRef.current.forEach((card, index) => {
-      gsap.from(card, {
-        opacity: 0,
-        y: 50,
-        duration: 0.6,
-        delay: index * 0.1,
-        scrollTrigger: {
-          trigger: card,
-          start: "top 80%",
-          toggleActions: "play none none none"
-        }
-      });
-    });
+    if (typeof window === "undefined") return;
 
-    // Animate section title
+    // Section title animation
     gsap.from(".projects-title", {
       opacity: 0,
       y: 40,
@@ -46,83 +31,46 @@ export default function Projects() {
       }
     });
 
-    // Clean up ScrollTrigger instances
-    return () => {
-      ScrollTrigger.getAll().forEach(instance => instance.kill());
-    };
+    // Project cards animation
+    projectCardsRef.current.forEach((card, index) => {
+      gsap.from(card, {
+        opacity: 0,
+        y: 50,
+        duration: 0.6,
+        delay: index * 0.1,
+        scrollTrigger: {
+          trigger: card,
+          start: "top 90%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+
+    return () => ScrollTrigger.getAll().forEach(trigger => trigger.kill());
   }, []);
 
   const openProject = (id) => {
-    // GSAP animation for opening project
-    gsap.to(".project-modal", {
-      opacity: 0,
-      scale: 0.95,
-      duration: 0.2,
-      onComplete: () => {
-        setExpandedProject(id);
-        setCurrentImageIndex(0);
-        gsap.fromTo(".project-modal",
-          { opacity: 0, scale: 0.95 },
-          { opacity: 1, scale: 1, duration: 0.3 }
-        );
-      }
-    });
+    setExpandedProject(id);
+    setCurrentImageIndex(0);
   };
 
   const closeProject = () => {
-    // GSAP animation for closing project
-    gsap.to(".project-modal", {
-      opacity: 0,
-      scale: 0.95,
-      duration: 0.2,
-      onComplete: () => {
-        setExpandedProject(null);
-      }
-    });
+    setExpandedProject(null);
   };
 
   const nextImage = () => {
-    // GSAP animation for image transition
-    gsap.to(".project-modal-image", {
-      opacity: 0,
-      x: 50,
-      duration: 0.2,
-      onComplete: () => {
-        setCurrentImageIndex(
-          (prev) =>
-            (prev + 1) %
-            projects.find((p) => p.id === expandedProject).images.length
-        );
-        gsap.fromTo(".project-modal-image",
-          { opacity: 0, x: -50 },
-          { opacity: 1, x: 0, duration: 0.3 }
-        );
-      }
-    });
+    setCurrentImageIndex(prev => 
+      (prev + 1) % projects.find(p => p.id === expandedProject).images.length
+    );
   };
 
   const prevImage = () => {
-    // GSAP animation for image transition
-    gsap.to(".project-modal-image", {
-      opacity: 0,
-      x: -50,
-      duration: 0.2,
-      onComplete: () => {
-        setCurrentImageIndex(
-          (prev) =>
-            (prev - 1 +
-              projects.find((p) => p.id === expandedProject).images.length) %
-            projects.find((p) => p.id === expandedProject).images.length
-        );
-        gsap.fromTo(".project-modal-image",
-          { opacity: 0, x: 50 },
-          { opacity: 1, x: 0, duration: 0.3 }
-        );
-      }
-    });
+    setCurrentImageIndex(prev => 
+      (prev - 1 + projects.find(p => p.id === expandedProject).images.length) % 
+      projects.find(p => p.id === expandedProject).images.length
+    );
   };
 
-  // Add project card to ref array
   const addToRefs = (el) => {
     if (el && !projectCardsRef.current.includes(el)) {
       projectCardsRef.current.push(el);
@@ -132,38 +80,34 @@ export default function Projects() {
   return (
     <section id="projects" className="projects-section" ref={projectsRef}>
       <div className="projects-container">
-        <motion.h2
-          className="projects-title"
-        >
-          Technical Projects
-        </motion.h2>
+        <h2 className="projects-title">Technical Projects</h2>
 
         <div className="projects-grid">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <motion.div
               key={project.id}
               ref={addToRefs}
               whileHover={{ y: -5 }}
               className="project-card"
             >
-              <div
+              <div 
                 className="project-image-container"
                 onClick={() => openProject(project.id)}
               >
                 <img
-                  src={project.images ? project.images[0] : project.image}
+                  src={project.images?.[0] || project.image}
                   alt={project.title}
                   className="project-image"
                 />
-                {project.images && project.images.length > 1 && (
-                  <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded">
+                {project.images?.length > 1 && (
+                  <div className="image-count-badge">
                     +{project.images.length - 1} more
                   </div>
                 )}
               </div>
 
               <div className="project-meta">
-                <h3
+                <h3 
                   className="project-name"
                   onClick={() => openProject(project.id)}
                 >
@@ -174,13 +118,8 @@ export default function Projects() {
                 </p>
 
                 <div className="project-tags">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="project-tag"
-                    >
-                      {tag}
-                    </span>
+                  {project.tags.map(tag => (
+                    <span key={tag} className="project-tag">{tag}</span>
                   ))}
                 </div>
 
@@ -190,10 +129,10 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="project-btn flex items-center text-sm hover:underline"
+                      className="project-link"
                     >
-                      <SiGithub className="mr-1 h-4 w-4" />
-                      View Source code
+                      <SiGithub className="icon" />
+                      View Code
                     </a>
                   )}
                   {project.demo && (
@@ -201,10 +140,10 @@ export default function Projects() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="project-btn flex items-center text-sm hover:underline"
+                      className="project-link"
                     >
+                      <ExternalLink className="icon" />
                       Live Demo
-                      <ExternalLink className="ml-1 h-4 w-4" />
                     </a>
                   )}
                 </div>
@@ -224,76 +163,48 @@ export default function Projects() {
             >
               <motion.div
                 className="project-modal"
-                onClick={(e) => e.stopPropagation()}
+                onClick={e => e.stopPropagation()}
+                initial={{ scale: 0.95 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.95 }}
               >
-                <button
+                <button 
                   onClick={closeProject}
                   className="project-modal-close"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
+                  &times;
                 </button>
 
-                {projects.find((p) => p.id === expandedProject).images && (
+                {projects.find(p => p.id === expandedProject).images && (
                   <div className="project-modal-image-container">
                     <img
-                      src={
-                        projects.find((p) => p.id === expandedProject).images[
-                          currentImageIndex
-                        ]
-                      }
-                      alt={projects.find((p) => p.id === expandedProject).title}
+                      src={projects.find(p => p.id === expandedProject).images[currentImageIndex]}
+                      alt={projects.find(p => p.id === expandedProject).title}
                       className="project-modal-image"
                     />
 
-                    {projects.find((p) => p.id === expandedProject).images
-                      .length > 1 && (
+                    {projects.find(p => p.id === expandedProject).images.length > 1 && (
                       <>
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            prevImage();
-                          }}
+                        <button 
+                          onClick={e => { e.stopPropagation(); prevImage(); }}
                           className="image-nav-button image-nav-prev"
                         >
-                          <ChevronLeft className="h-6 w-6" />
+                          <ChevronLeft />
                         </button>
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            nextImage();
-                          }}
+                        <button 
+                          onClick={e => { e.stopPropagation(); nextImage(); }}
                           className="image-nav-button image-nav-next"
                         >
-                          <ChevronRight className="h-6 w-6" />
+                          <ChevronRight />
                         </button>
                         <div className="image-dots">
-                          {projects
-                            .find((p) => p.id === expandedProject)
-                            .images.map((_, idx) => (
-                              <button
-                                key={idx}
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  setCurrentImageIndex(idx);
-                                }}
-                                className={`image-dot ${
-                                  currentImageIndex === idx ? "active" : ""
-                                }`}
-                              />
-                            ))}
+                          {projects.find(p => p.id === expandedProject).images.map((_, idx) => (
+                            <button
+                              key={idx}
+                              onClick={e => { e.stopPropagation(); setCurrentImageIndex(idx); }}
+                              className={`image-dot ${currentImageIndex === idx ? 'active' : ''}`}
+                            />
+                          ))}
                         </div>
                       </>
                     )}
@@ -302,54 +213,41 @@ export default function Projects() {
 
                 <div className="project-modal-content">
                   <h3 className="project-modal-title">
-                    {projects.find((p) => p.id === expandedProject).title}
+                    {projects.find(p => p.id === expandedProject).title}
                   </h3>
                   <p className="project-modal-description">
-                    {projects.find((p) => p.id === expandedProject).description}
+                    {projects.find(p => p.id === expandedProject).description}
                   </p>
 
-                  <div className="mb-6">
-                    <h4 className="project-modal-tech-title">
-                      Technologies Used:
-                    </h4>
+                  <div className="project-modal-tech">
+                    <h4 className="project-modal-tech-title">Technologies Used:</h4>
                     <div className="project-tags">
-                      {projects
-                        .find((p) => p.id === expandedProject)
-                        .tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="project-tag"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+                      {projects.find(p => p.id === expandedProject).tags.map(tag => (
+                        <span key={tag} className="project-tag">{tag}</span>
+                      ))}
                     </div>
                   </div>
 
                   <div className="project-modal-buttons">
-                    {projects.find((p) => p.id === expandedProject).github && (
+                    {projects.find(p => p.id === expandedProject).github && (
                       <a
-                        href={
-                          projects.find((p) => p.id === expandedProject).github
-                        }
+                        href={projects.find(p => p.id === expandedProject).github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="project-modal-button project-modal-button-code"
+                        className="project-modal-button code"
                       >
-                        <SiGithub className="mr-2 h-5 w-5" />
-                        View source code
+                        <SiGithub className="icon" />
+                        View Code
                       </a>
                     )}
-                    {projects.find((p) => p.id === expandedProject).demo && (
+                    {projects.find(p => p.id === expandedProject).demo && (
                       <a
-                        href={
-                          projects.find((p) => p.id === expandedProject).demo
-                        }
+                        href={projects.find(p => p.id === expandedProject).demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="project-modal-button project-modal-button-demo"
+                        className="project-modal-button demo"
                       >
-                        <ExternalLink className="mr-2 h-5 w-5" />
+                        <ExternalLink className="icon" />
                         Live Demo
                       </a>
                     )}

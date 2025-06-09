@@ -1,67 +1,146 @@
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin } from 'react-icons/fa';
+"use client";
+import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaLinkedin,
+  FaWhatsapp
+} from "react-icons/fa";
+import "../styles/Contact.css";
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
-  return (
-    <section id="contact" className="py-16 md:py-20">
-      <div className="container mx-auto px-4 max-w-2xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
-          Get In Touch
-        </h2>
-        
-        <div className="bg-gradient-to-br from-purple-100 to-blue-100 p-6 md:p-8 rounded-xl shadow-lg border border-white/50 backdrop-blur-sm">
-          <h3 className="text-xl md:text-2xl font-bold mb-5 text-purple-800">
-            Contact Information
-          </h3>
-          
-          <ul className="space-y-4">
-            <li className="flex items-start bg-white/70 p-3 md:p-4 rounded-lg backdrop-blur-sm">
-              <div className="bg-gradient-to-r from-pink-500 to-purple-500 p-2 rounded-md mr-3 shadow-sm">
-                <FaPhone className="text-white text-base md:text-4xl" />
-              </div>
-              <div>
-                <h4 className="font-medium text-gray-700 text-sm md:text-base">Phone</h4>
-                <p className="text-gray-900 font-medium text-base md:text-lg">
-                  8118006481 / 7735872336
-                </p>
-              </div>
-            </li>
-            
-            <li className="flex items-start bg-white/70 p-3 md:p-4 rounded-lg backdrop-blur-sm">
-              <div className="bg-gradient-to-r from-blue-500 to-cyan-500 p-2 rounded-md mr-3 shadow-sm">
-                <FaEnvelope className="text-white text-base md:text-4xl" />
-              </div>
-              <div>
-                <h4 className="font-medium text-gray-700 text-sm md:text-base">Email</h4>
-                <p className="text-gray-900 font-medium text-base md:text-lg">
-                  jeetbehera143@gmail.com
-                </p>
-              </div>
-            </li>
-            
-            <li className="flex items-start bg-white/70 p-3 md:p-4 rounded-lg backdrop-blur-sm">
-              <div className="bg-gradient-to-r from-amber-500 to-orange-500 p-2 rounded-md mr-3 shadow-sm">
-                <FaMapMarkerAlt className="text-white text-base md:text-4xl" />
-              </div>
-              <div>
-                <h4 className="font-medium text-gray-700 text-sm md:text-base">Address</h4>
-                <p className="text-gray-900 font-medium text-base md:text-lg">
-                  Amin Line, Koraput, Odisha 764020
-                </p>
-              </div>
-            </li>
-          </ul>
+  const sectionRef = useRef(null);
+  const cardRef = useRef(null);
+  const contactItemsRef = useRef([]);
+  const buttonRef = useRef(null);
 
-          <div className="mt-6 md:mt-8 bg-white/70 p-3 md:p-4 rounded-lg backdrop-blur-sm">
-            <h4 className="font-medium text-gray-700 mb-2 md:mb-3 text-sm md:text-base">
-              Connect with me
-            </h4>
+  useEffect(() => {
+    // Only run on client-side
+    if (typeof window === "undefined") return;
+
+    // Section animation
+    gsap.from(sectionRef.current, {
+      opacity: 0,
+      y: 50,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none"
+      }
+    });
+
+    // Card animation
+    gsap.from(cardRef.current, {
+      opacity: 0,
+      scale: 0.95,
+      duration: 0.6,
+      delay: 0.2,
+      scrollTrigger: {
+        trigger: cardRef.current,
+        start: "top 90%",
+        toggleActions: "play none none none"
+      }
+    });
+
+    // Contact items animation
+    contactItemsRef.current.forEach((item, index) => {
+      gsap.from(item, {
+        opacity: 0,
+        x: -20,
+        duration: 0.5,
+        delay: index * 0.15,
+        scrollTrigger: {
+          trigger: item,
+          start: "top 90%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+
+    // Button animation
+    gsap.from(buttonRef.current, {
+      opacity: 0,
+      y: 20,
+      duration: 0.6,
+      delay: 0.6,
+      scrollTrigger: {
+        trigger: buttonRef.current,
+        start: "top 90%",
+        toggleActions: "play none none none"
+      }
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
+  const addContactItemToRefs = (el) => {
+    if (el && !contactItemsRef.current.includes(el)) {
+      contactItemsRef.current.push(el);
+    }
+  };
+
+  return (
+    <section id="contact" className="contact-section" ref={sectionRef}>
+      <div className="contact-container">
+        <h2 className="contact-title">Get In Touch</h2>
+
+        <div className="contact-card" ref={cardRef}>
+          <div className="contact-info">
+            <h3 className="contact-info-title">Contact Information</h3>
+
+            <ul>
+              <li className="contact-item" ref={addContactItemToRefs}>
+                <FaPhone className="contact-icon phone" />
+                <div>
+                  <h4>Phone</h4>
+                  <p>8118006481 / 7735872336</p>
+                </div>
+              </li>
+
+              <li className="contact-item" ref={addContactItemToRefs}>
+                <FaWhatsapp className="contact-icon whatsapp" />
+                <div>
+                  <h4>WhatsApp</h4>
+                  <p>8118006481</p>
+                </div>
+              </li>
+
+              <li className="contact-item" ref={addContactItemToRefs}>
+                <FaEnvelope className="contact-icon email" />
+                <div>
+                  <h4>Email</h4>
+                  <p>jeetbehera143@gmail.com</p>
+                </div>
+              </li>
+
+              <li className="contact-item" ref={addContactItemToRefs}>
+                <FaMapMarkerAlt className="contact-icon address" />
+                <div>
+                  <h4>Address</h4>
+                  <p>Amin Line, Koraput, Odisha 764020</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div className="connect-section">
             <a
+              ref={buttonRef}
               href="https://linkedin.com/in/jashabant-behera-34bbb4b6"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-gradient-to-r from-blue-600 to-blue-700 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-md text-sm md:text-base shadow-sm hover:shadow-md transition-all"
+              className="connect-link"
             >
-              <FaLinkedin className="mr-2 text-base md:text-lg" />
+              <FaLinkedin className="mr-2" />
               LinkedIn Profile
             </a>
           </div>

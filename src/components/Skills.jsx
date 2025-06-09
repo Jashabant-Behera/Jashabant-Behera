@@ -1,9 +1,4 @@
-import {
-  FaReact,
-  FaNodeJs,
-  FaGitAlt,
-  FaServer,
-} from "react-icons/fa";
+import { FaReact, FaNodeJs, FaGitAlt, FaServer } from "react-icons/fa";
 import {
   SiNextdotjs,
   SiTailwindcss,
@@ -13,6 +8,7 @@ import {
 import { DiJavascript, DiHtml5, DiCss3 } from "react-icons/di";
 import { Code, BrainCircuit } from "lucide-react";
 import skillsData from "@/data/skills";
+import "../styles/Skills.css";
 
 const skills = skillsData.skills;
 
@@ -33,80 +29,49 @@ const skillIcons = {
 
 export default function Skills() {
   return (
-    <section
-      id="skills"
-      className="py-20 bg-gray-50"
-    >
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          My Skills
-        </h2>
+    <section id="skills" className="skills-section">
+      <div className="section-container">
+        <h2 className="section-heading">MY SKILLS</h2>
 
         {/* Technical Skills */}
-        <div className="mb-16">
-          <h3 className="text-xl font-semibold mb-6 text-gray-800 border-b pb-2">
-            Technical Skills
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {skills?.technical?.length > 0 ? (
-              skills.technical.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100"
-                >
-                  <div className="flex items-center mb-2">
-                    {skillIcons[skill.name] || (
-                      <Code className="text-gray-500" />
-                    )}
-                    <span className="ml-2 font-medium">
-                      {skill.name}
-                    </span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div
-                      className={`h-2 rounded-full ${
-                        skill.level === "Advanced"
-                          ? "bg-green-500 w-4/5"
-                          : skill.level === "Intermediate"
-                          ? "bg-blue-400 w-3/5"
-                          : skill.level === "Learning"
-                          ? "bg-yellow-400 w-2/5"
-                          : "bg-gray-300 w-1/5"
-                      }`}
-                    ></div>
-                  </div>
-                  <p className="text-xs text-gray-500 mt-1">
-                    {skill.level}
-                  </p>
-                  <p className="text-xs text-gray-600 mt-2">
-                    {skill.description}
-                  </p>
+        <div className="tech-skills">
+          <h3 className="skills-heading">Technical Skills</h3>
+          <div className="skills-grid">
+            {skills?.technical?.map((skill) => (
+              <div key={skill.name} className="skill-card">
+                <div className="skill-header">
+                  {skillIcons[skill.name] || <Code className="text-gray-500" />}
+                  <span className="skill-name">{skill.name}</span>
                 </div>
-              ))
-            ) : (
-              <p>No technical skills available.</p>
-            )}
+                <div className="progress-bar">
+                  <div
+                    className={`progress-fill ${
+                      skill.level === "Advanced"
+                        ? "progress-advanced"
+                        : skill.level === "Intermediate"
+                        ? "progress-intermediate"
+                        : skill.level === "Learning"
+                        ? "progress-learning"
+                        : "progress-basic"
+                    }`}
+                  ></div>
+                </div>
+                <p className="skill-level">{skill.level}</p>
+                <p className="skill-description">{skill.description}</p>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Soft Skills */}
         <div>
-          <h3 className="text-xl font-semibold mb-6 text-gray-800 border-b pb-2">
-            Professional Skills
-          </h3>
-          <div className="flex flex-wrap gap-3">
-            {skills?.soft?.length > 0 ? (
-              skills.soft.map((skill) => (
-                <span
-                  key={skill.name}
-                  className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium hover:bg-indigo-50 hover:border-indigo-100 transition-colors"
-                >
-                  {skill.name}
-                </span>
-              ))
-            ) : (
-              <p>No soft skills available.</p>
-            )}
+          <h3 className="professional-skills-heading">Professional Skills</h3>
+          <div className="skills-container">
+            {skills?.soft?.map((skill) => (
+              <span key={skill.name} className="skill-tag">
+                {skill.name}
+              </span>
+            ))}
           </div>
         </div>
       </div>

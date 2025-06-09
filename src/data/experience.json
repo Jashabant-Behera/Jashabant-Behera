@@ -1,13 +1,13 @@
 [
   {
     "role": "Sanitation & Operations Intern",
-    "company": "Koraput Municipality – TULIP (Govt. of India)",
+    "company": "Koraput Municipality – TULIP (Govt. of Odisha)",
     "period": "Dec 2022 – Dec 2024",
     "achievements": [
       "Led daily operations of waste management centers under the Urban Learning Internship Program (TULIP).",
       "Implemented process improvements that enhanced center productivity by over 50%.",
       "Collaborated with municipal staff and community groups to optimize collection routes and resource usage.",
-      "Contributed to the digital documentation and reporting of sanitation KPIs.",
+      "Contributed to the digital documentation and reporting of sanitation activities.",
       "Gained real-world exposure to urban governance, logistics, and citizen service delivery."
     ],
     "technologies": [
@@ -16,6 +16,30 @@
       "Data Collection",
       "Reporting",
       "Public Communication"
+    ],
+    "images": [
+      "/exp/exp1.jpeg",
+      "/exp/exp2.jpeg",
+      "/exp/exp3.jpeg",
+      "/exp/exp4.jpeg",
+      "/exp/exp5.jpeg",
+      "/exp/exp6.jpeg",
+      "/exp/exp7.jpeg",
+      "/exp/exp8.jpeg",
+
+      "/exp/exp10.jpeg"
+    ],
+    "work":[
+      "PARAB 2023",
+      "TRAINING PROGRAM",
+      "INDIPENDANCE DAY",
+      "CULTURAL FUNCTION",
+      "PARAB RALLY",
+      "CULTURAL EVENT",
+      "ROAD RALLY",
+      "REPUBLIC DAY",
+
+      "CAPACIY BUILDING PROGRAM"
     ]
   }
 ]

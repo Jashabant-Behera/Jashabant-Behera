@@ -4,8 +4,9 @@
   align-items: center;
   gap: 3rem;
   padding: 5rem 2rem;
-  background-color: #edededff;
+  background-color: var(--color-subtle-gray);
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .image-wrapper {
@@ -14,15 +15,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  will-change: transform, opacity;
 }
 
 .red-circle {
   position: absolute;
   width: 500px;
   height: 500px;
-  background-color: #ff0000;
+  background-color: var(--color-accent);
   border-radius: 50%;
   z-index: -1;
+  will-change: transform, opacity, scale;
 }
 
 .about-img {
@@ -33,35 +36,28 @@
   height: auto;
   object-fit: contain;
   transform: translateX(-20px) translateY(20px);
-}
-
-.about-img,
-.red-circle,
-.about-container,
-.skill-tag {
-  will-change: transform, opacity;
+  transition: transform 0.5s ease-out;
 }
 
 .about-container {
   flex: 1;
   position: relative;
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
   max-width: 600px;
   margin-left: 2rem;
+  will-change: transform, opacity;
 }
+
 .about-title {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  background: linear-gradient(90deg, var(--color-accent), darken(var(--color-accent), 15%));
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  color: var(--color-text);
   font-family: "Antonio", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -70,40 +66,37 @@
 .about-description {
   font-size: 1.5rem;
   line-height: 1.8;
-  color: #4b5563;
+  color: var(--color-text);
   margin-bottom: 1.5rem;
   font-family: "Rubik", sans-serif;
 }
 
 .name-highlight {
   font-weight: 600;
-  color: #6366f1;
+  color: var(--color-accent);
   font-family: "Bebas Neue", sans-serif;
   letter-spacing: 1px;
 }
 
 .react-highlight {
   font-weight: 600;
-  color: #3b82f6;
-  font-family: "Special Elite", cursive;
+  color: #0284c7;
 }
 
 .next-highlight {
   font-weight: 600;
-  color: #10b981;
-  font-family: "Special Elite", cursive;
+  color: #059669;
 }
 
 .node-highlight {
   font-weight: 600;
-  color: #f59e0b;
-  font-family: "Special Elite", cursive;
+  color: #d97706;
 }
 
 .about-subtext {
   font-size: 1.2rem;
   line-height: 1.7;
-  color: #6b7280;
+  color: var(--color-muted);
   margin-bottom: 2rem;
   font-family: "Rubik", sans-serif;
   font-style: italic;
@@ -123,30 +116,37 @@
   font-weight: 600;
   transition: all 0.3s ease;
   font-family: "Antonio", sans-serif;
+  display: inline-block;
+  will-change: transform, opacity;
+  background-color: rgba(var(--color-accent), 0.1);
+  color: var(--color-accent);
 }
 
 .skill-tag:hover {
   transform: translateY(-2px);
+  background-color: rgba(var(--color-accent), 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Specific tag colors */
 .react-tag {
-  background-color: #dbeafe;
-  color: #1e40af;
+  background-color: rgba(2, 132, 199, 0.1);
+  color: #0284c7;
 }
 
 .node-tag {
-  background-color: #dcfce7;
-  color: #166534;
+  background-color: rgba(5, 150, 105, 0.1);
+  color: #065f46;
 }
 
 .mongo-tag {
-  background-color: #f0f9ff;
-  color: #0369a1;
+  background-color: rgba(4, 120, 87, 0.1);
+  color: #047857;
 }
 
 .tailwind-tag {
-  background-color: #f5f3ff;
-  color: #5b21b6;
+  background-color: rgba(124, 58, 237, 0.1);
+  color: #7c3aed;
 }
 
 @media (max-width: 768px) {
@@ -169,49 +169,39 @@
     max-width: 250px;
   }
 
-  @media (max-width: 768px) {
-    .about-container {
-      margin-left: 0;
-      padding: 1.5rem;
-      margin-top: 2rem;
-      max-width: 100%;
-    }
+  .about-container {
+    margin-left: 0;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    max-width: 100%;
+  }
 
-    .about-title {
-      font-size: 2.2rem;
-      margin-bottom: 1.2rem;
-    }
+  .about-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+  }
 
-    .about-description {
-      font-size: 1.2rem;
-      margin-bottom: 1.2rem;
-    }
+  .about-description {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
 
-    .about-subtext {
-      font-size: 1rem;
-    }
+  .about-subtext {
+    font-size: 1rem;
   }
 }
 
-/* Add these to your existing About.css */
-.about-section {
-  overflow: hidden;
-}
-
-.image-wrapper,
-.about-container {
-  will-change: transform, opacity;
-}
-
-.red-circle {
-  will-change: transform, opacity, scale;
-}
-
-.about-img {
-  transition: transform 0.5s ease-out;
-}
-
-.skill-tag {
-  display: inline-block;
-  will-change: transform, opacity;
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 1.8rem;
+  }
+  
+  .about-description {
+    font-size: 1.1rem;
+  }
+  
+  .skill-tag {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
 }

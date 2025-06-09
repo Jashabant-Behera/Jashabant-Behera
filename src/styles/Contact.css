@@ -1,0 +1,147 @@
+/* Contact Section */
+.contact-section {
+  padding: 5rem 0;
+  background-color: var(--color-subtle-gray);
+  font-family: "Rubik", sans-serif;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.contact-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--color-text);
+  font-family: "Antonio", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Contact Card */
+.contact-card {
+  background-color: var(--color-bg);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: 0 auto;
+  will-change: transform, opacity;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Information */
+.contact-info {
+  margin-bottom: 2rem;
+}
+
+.contact-info-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 0.5rem;
+  font-family: "Rubik", sans-serif;
+}
+
+/* Contact Item */
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  will-change: transform, opacity;
+}
+
+.contact-icon {
+  margin-right: 0.75rem;
+  font-size: 1.5rem;
+  min-width: 24px;
+}
+
+.contact-icon.phone {
+  color: black;
+}
+
+.contact-icon.whatsapp {
+  color: #25d366; /* WhatsApp green */
+}
+
+.contact-icon.email {
+  color: #d44638; /* Gmail red */
+}
+
+.contact-icon.address {
+  color: #f4b400; /* Google Maps yellow */
+}
+
+.contact-item h4 {
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+}
+
+.contact-item p {
+  color: var(--color-muted);
+}
+
+/* Connect Section */
+.connect-section {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.connect-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-accent);
+  color: white;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  will-change: transform, opacity;
+}
+
+.connect-link:hover {
+  background-color: var(--color-muted-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 2.5rem;
+  }
+
+  .contact-info-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 3rem 0;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-card {
+    padding: 1.5rem;
+  }
+}
