@@ -18,45 +18,40 @@ const About = () => {
   const skillsRef = useRef(null);
 
   return (
-    <section id="about" className="about-section" ref={sectionRef}>
-      <div className="image-wrapper">
-        <div className="red-circle" ref={circleRef}></div>
-        <div ref={imageRef}>
-          <Image
-            src="/about/about.png"
-            alt="about JB"
-            width={500}
-            height={500}
-            className="about-img"
-            priority
-          />
+    <section id="about" className="about">
+      <h2 className="about-title" ref={titleRef}>
+        About Me
+      </h2>
+      <div className="about-section" ref={sectionRef}>
+        <div className="image-wrapper">
+          <div className="red-circle" ref={circleRef}></div>
+          <div ref={imageRef}>
+            <Image
+              src="/about/about.png"
+              alt="about JB"
+              width={500}
+              height={500}
+              className="about-img"
+              priority
+            />
+          </div>
         </div>
-      </div>
-      <div className="about-container">
-        <h2 className="about-title" ref={titleRef}>
-          About Me
-        </h2>
-        <p className="about-description" ref={descriptionRef}>
-          Hey! I'm <span className="name-highlight">Jashabant Behera</span>, a
-          passionate full-stack developer with a love for building intuitive and
-          scalable web apps. I specialize in creating seamless user experiences
-          using <span className="react-highlight">React.js</span>,{" "}
-          <span className="next-highlight">Next.js</span>, and{" "}
-          <span className="node-highlight">Node.js</span>.
-        </p>
-        <p className="about-subtext" ref={subtextRef}>
-          With a strong foundation in frontend and backend development, I enjoy
-          tackling real-world problems, exploring emerging technologies, and
-          crafting code that's clean and impactful. When I'm not coding, I'm
-          likely exploring new travel destinations or sketching out my next big
-          idea.
-        </p>
-
-        <div className="skills-container" ref={skillsRef}>
-          <span className="skill-tag react-tag">React.js</span>
-          <span className="skill-tag node-tag">Node.js</span>
-          <span className="skill-tag mongo-tag">MongoDB</span>
-          <span className="skill-tag tailwind-tag">Tailwind CSS</span>
+        <div className="about-container">
+          <p className="about-description" ref={descriptionRef}>
+            Hey! I'm <span className="name-highlight">Jashabant Behera</span>, a
+            passionate full-stack developer with a love for building intuitive
+            and scalable web apps. I specialize in creating seamless user
+            experiences using <span className="react-highlight">React.js</span>,{" "}
+            <span className="next-highlight">Next.js</span>, and{" "}
+            <span className="node-highlight">Node.js</span>.
+          </p>
+          <p className="about-subtext" ref={subtextRef}>
+            With a strong foundation in frontend and backend development, I
+            enjoy tackling real-world problems, exploring emerging technologies,
+            and crafting code that's clean and impactful. When I'm not coding,
+            I'm likely exploring new travel destinations or sketching out my
+            next big idea.
+          </p>
         </div>
       </div>
     </section>

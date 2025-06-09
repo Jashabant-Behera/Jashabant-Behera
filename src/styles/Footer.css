@@ -1,11 +1,9 @@
 .footer {
-  bottom: 0;
-  z-index: 50;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(var(--color-bg), 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
   width: 100%;
-  height: 70px;
-  display: flex;
-  align-items: center;
+  border-top: 1px solid var(--color-subtle-gray);
 }
 
 .footer-container {
@@ -15,62 +13,64 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  flex-wrap: wrap;
 }
 
-.copyright {
-  color: #374151;
-  font-size: 0.875rem;
-  text-decoration: none;
-  font-weight: 500;
+.footer p,
+.footer a {
+  color: var(--color-muted);
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
   transition: color 0.3s ease;
 }
 
-.copyright:hover {
-  color: #4f46e5;
-}
-
-.social-links {
+.footer-social-links {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
 .social-link {
-  color: #4b5563;
-  text-decoration: none;
   padding: 0.5rem;
   border-radius: 50%;
-  transition: all 0.3s ease;
+  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
+  color: var(--color-muted);
 }
 
 .social-link:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(var(--color-subtle-gray), 0.4);
 }
 
-.github-icon:hover {
-  color: #1f2937;
-}
-
-.linkedin-icon:hover {
-  color: #1e40af;
-}
-
+.github-icon:hover,
+.linkedin-icon:hover,
 .email-icon:hover {
-  color: #ef4444;
+  color: var(--color-accent);
 }
 
 .back-to-top {
-  color: #374151;
-  font-size: 0.875rem;
   text-decoration: none;
   font-weight: 500;
+  color: var(--color-muted);
   transition: color 0.3s ease;
 }
 
 .back-to-top:hover {
-  color: #4f46e5;
+  color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer-social-links {
+    justify-content: center;
+  }
 }

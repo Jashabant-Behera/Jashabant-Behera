@@ -6,8 +6,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-subtle-gray); /* #edededff → gray bg */
-  color: var(--color-text); /* #111111 → primary text */
+  background-color: var(--color-subtle-gray);
+  color: var(--color-text);
 }
 
 .hero-background-text {
@@ -23,9 +23,10 @@
   font-family: "Bebas Neue", sans-serif;
   font-size: 400px;
   letter-spacing: 25px;
-  color: var(--color-accent); /* rgb(255, 0, 0) → bright orange/red */
+  color: var(--color-accent);
   transform: scaleY(1.5);
   text-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .portfolio-subtitle {
@@ -34,8 +35,9 @@
   bottom: 0;
   font-family: "Bebas Neue", sans-serif;
   font-size: 100px;
-  color: var(--color-text); /* black text */
+  color: var(--color-text);
   text-shadow: 4px 4px 0px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
 }
 
 .hero-image-container {
@@ -45,6 +47,7 @@
   width: 45%;
   overflow: hidden;
   z-index: 1;
+  transition: all 0.3s ease;
 }
 
 .hero-image {
@@ -66,8 +69,9 @@
   margin-bottom: 8px;
   left: 35px;
   bottom: 80px;
-  z-index: 10;
+  z-index: 999;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 .download-btn {
@@ -76,7 +80,7 @@
   align-items: center;
   gap: 8px;
   padding: 12px 24px;
-  background-color: var(--color-accent); /* #f97316 */
+  background-color: var(--color-accent);
   color: #ffffff;
   font-size: 14px;
   text-transform: uppercase;
@@ -84,8 +88,8 @@
   text-decoration: none;
   border-radius: 8px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  left: 35px;
-  bottom: 100px;
+  right: 35px;
+  bottom: 70px;
   z-index: 10;
   box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
   border: 2px solid transparent;
@@ -109,7 +113,7 @@
   bottom: 60px;
   font-family: "DM Sans", sans-serif;
   font-size: 18px;
-  color: var(--color-muted); /* #333 */
+  color: var(--color-muted);
   z-index: 10;
   white-space: nowrap;
   overflow: hidden;
@@ -117,4 +121,190 @@
   padding: 8px 16px;
   border-radius: 20px;
   backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-section {
+    position: relative;
+  }
+
+  .hero-background-text {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .portfolio-title {
+    font-size: 300px;
+    letter-spacing: 5px;
+    transform: rotate(-90deg) translateX(-50%);
+    transform-origin: left top;
+    position: absolute;
+    white-space: nowrap;
+  }
+
+  .portfolio-subtitle {
+    position: absolute;
+    font-size: 100px;
+    right: 200px;
+    top: -520px;
+  }
+
+  .download-btn {
+    position: absolute;
+    margin: 10px 0;
+  }
+
+  .hero-name {
+    position: absolute;
+    left: 50%;
+    bottom: 15%;
+    padding: 10px;
+    color: white;
+    mix-blend-mode: difference;
+    user-select: none;
+  }
+
+  .hero-tagline {
+    opacity: 0;
+    display: none;
+  }
+
+  .download-btn {
+    position: absolute;
+    right: 50px;
+    bottom: 10%;
+  }
+
+  .hero-image-container {
+    position: absolute;
+    width: 600px;
+    height: 100%;
+    right: 0;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 100px;
+  }
+
+  .hero-background-text {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+
+  .portfolio-title {
+    font-size: 80px;
+    letter-spacing: 5px;
+    transform: rotate(-90deg) translateX(-50%);
+    transform-origin: left top;
+    margin-left: 0;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    white-space: nowrap;
+  }
+
+  .portfolio-subtitle {
+    position: relative;
+    font-size: 40px;
+    right: auto;
+    bottom: auto;
+    margin-top: 20px;
+    text-align: left;
+    align-self: flex-start;
+    transform: none !important;
+  }
+
+  .hero-content-mobile {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2;
+    margin-top: 40px;
+  }
+
+  .hero-name,
+  .hero-tagline,
+  .download-btn {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin: 10px 0;
+  }
+
+  .hero-name,
+  .hero-tagline {
+    opacity: 0;
+    display: none;
+  }
+
+  .download-btn {
+    order: 3;
+    margin-top: 10px;
+  }
+
+  .hero-image-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-top: 40px;
+    order: 4;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .portfolio-title {
+    position: absolute;
+    font-size: 13rem;
+    font-weight: bold;
+    margin: 0px;
+    top: 260px;
+    left: -50px;
+  }
+
+  .portfolio-subtitle {
+    position: absolute;
+    font-size: 3.5rem;
+    top: -130px;
+    left: 200px;
+  }
+
+  .hero-name {
+    font-size: 28px;
+  }
+
+  .hero-tagline {
+    font-size: 14px;
+  }
+
+  .hero-image-container {
+    position: absolute;
+    height: 800px;
+    right: -50px;
+  }
+
+  .download-btn {
+    position: absolute;
+    padding: 10px 20px;
+    font-size: 12px;
+    bottom: 15%;
+    left: 45%;
+  }
 }

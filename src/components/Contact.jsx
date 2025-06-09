@@ -7,8 +7,9 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaLinkedin,
-  FaWhatsapp
+  FaWhatsapp,
 } from "react-icons/fa";
+import Image from "next/image";
 import "../styles/Contact.css";
 
 // Register GSAP plugins
@@ -32,8 +33,8 @@ export default function Contact() {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top 80%",
-        toggleActions: "play none none none"
-      }
+        toggleActions: "play none none none",
+      },
     });
 
     // Card animation
@@ -45,8 +46,8 @@ export default function Contact() {
       scrollTrigger: {
         trigger: cardRef.current,
         start: "top 90%",
-        toggleActions: "play none none none"
-      }
+        toggleActions: "play none none none",
+      },
     });
 
     // Contact items animation
@@ -59,8 +60,8 @@ export default function Contact() {
         scrollTrigger: {
           trigger: item,
           start: "top 90%",
-          toggleActions: "play none none none"
-        }
+          toggleActions: "play none none none",
+        },
       });
     });
 
@@ -73,12 +74,12 @@ export default function Contact() {
       scrollTrigger: {
         trigger: buttonRef.current,
         start: "top 90%",
-        toggleActions: "play none none none"
-      }
+        toggleActions: "play none none none",
+      },
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
@@ -90,44 +91,78 @@ export default function Contact() {
 
   return (
     <section id="contact" className="contact-section" ref={sectionRef}>
+      <h2 className="contact-title">Get In Touch</h2>
       <div className="contact-container">
-        <h2 className="contact-title">Get In Touch</h2>
-
+        <div className="contact-circle">
+          <Image
+            src="/contact/contact.png"
+            alt="about JB"
+            width={500}
+            height={500}
+            className="contact-img"
+            priority
+          />
+        </div>
         <div className="contact-card" ref={cardRef}>
           <div className="contact-info">
             <h3 className="contact-info-title">Contact Information</h3>
 
             <ul>
+              {/* Phone - Opens dialer */}
               <li className="contact-item" ref={addContactItemToRefs}>
-                <FaPhone className="contact-icon phone" />
-                <div>
-                  <h4>Phone</h4>
-                  <p>8118006481 / 7735872336</p>
-                </div>
+                <a href="tel:+918118006481" className="contact-clickable">
+                  <FaPhone className="contact-icon phone" />
+                  <div>
+                    <h4>Phone</h4>
+                    <p>8118006481 / 7735872336</p>
+                  </div>
+                </a>
               </li>
 
+              {/* WhatsApp - Opens chat */}
               <li className="contact-item" ref={addContactItemToRefs}>
-                <FaWhatsapp className="contact-icon whatsapp" />
-                <div>
-                  <h4>WhatsApp</h4>
-                  <p>8118006481</p>
-                </div>
+                <a
+                  href="https://wa.me/918118006481"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-clickable"
+                >
+                  <FaWhatsapp className="contact-icon whatsapp" />
+                  <div>
+                    <h4>WhatsApp</h4>
+                    <p>8118006481</p>
+                  </div>
+                </a>
               </li>
 
+              {/* Email */}
               <li className="contact-item" ref={addContactItemToRefs}>
-                <FaEnvelope className="contact-icon email" />
-                <div>
-                  <h4>Email</h4>
-                  <p>jeetbehera143@gmail.com</p>
-                </div>
+                <a
+                  href="mailto:jeetbehera143@gmail.com"
+                  className="contact-clickable"
+                >
+                  <FaEnvelope className="contact-icon email" />
+                  <div>
+                    <h4>Email</h4>
+                    <p>jeetbehera143@gmail.com</p>
+                  </div>
+                </a>
               </li>
 
+              {/* Address - Optional map link */}
               <li className="contact-item" ref={addContactItemToRefs}>
-                <FaMapMarkerAlt className="contact-icon address" />
-                <div>
-                  <h4>Address</h4>
-                  <p>Amin Line, Koraput, Odisha 764020</p>
-                </div>
+                <a
+                  href="https://maps.google.com/?q=Amin+Line,+Koraput,+Odisha+764020"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-clickable"
+                >
+                  <FaMapMarkerAlt className="contact-icon address" />
+                  <div>
+                    <h4>Address</h4>
+                    <p>Amin Line, Koraput, Odisha 764020</p>
+                  </div>
+                </a>
               </li>
             </ul>
           </div>

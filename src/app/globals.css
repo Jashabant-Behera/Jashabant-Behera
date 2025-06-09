@@ -7,12 +7,9 @@
   color-scheme: light;
 
   --color-bg: #ffffff;
-  --color-text: #111827;
-  --color-accent: #ff5429ff;
-  --color-subtle-gray: #edededff;
-  --color-muted: #888888;
-  --color-muted-hover: #555555;
-
+  --color-text: #141517;
+  --color-accent: #ff3c00;
+  --color-subtle-gray: #F2F4F7;
 
   --scroll-track: #f1f1f1;
   --scroll-thumb: #888;

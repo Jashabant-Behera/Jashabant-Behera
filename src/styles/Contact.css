@@ -9,9 +9,13 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .contact-title {
+  width: 100%;
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
@@ -30,7 +34,8 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  max-width: 600px;
+  width: 600px;
+  height: 500px;
   margin: 0 auto;
   will-change: transform, opacity;
 }
@@ -38,11 +43,6 @@
 .contact-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Contact Information */
-.contact-info {
-  margin-bottom: 2rem;
 }
 
 .contact-info-title {
@@ -74,15 +74,15 @@
 }
 
 .contact-icon.whatsapp {
-  color: #25d366; /* WhatsApp green */
+  color: #25d366;
 }
 
 .contact-icon.email {
-  color: #d44638; /* Gmail red */
+  color: #d44638;
 }
 
 .contact-icon.address {
-  color: #f4b400; /* Google Maps yellow */
+  color: #f4b400;
 }
 
 .contact-item h4 {
@@ -121,7 +121,43 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive */
+/* Image Styling */
+.contact-img {
+  display: block;
+  margin: 1rem auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.contact-circle {
+  width: 500px;
+  height: 500px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+.contact-clickable {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.3s ease;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  width: 400px;
+}
+
+.contact-clickable:hover {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.05
+  ); /* or use a var for theme compatibility */
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
   .contact-title {
     font-size: 2.5rem;
@@ -129,6 +165,10 @@
 
   .contact-info-title {
     font-size: 1.25rem;
+  }
+
+  .contact-img {
+    margin: 1.5rem auto;
   }
 }
 
@@ -143,5 +183,10 @@
 
   .contact-card {
     padding: 1.5rem;
+  }
+
+  .contact-img {
+    margin: 1rem auto;
+    border-radius: 0.25rem;
   }
 }

@@ -86,7 +86,7 @@ export default function Hero() {
       master.to(
         taglineRef.current,
         {
-          duration: 0.02, 
+          duration: 0.02,
           onStart: () => {
             taglineRef.current.textContent += char;
           },
@@ -121,10 +121,6 @@ export default function Hero() {
         <h3 className="portfolio-subtitle" ref={subtitleRef}>
           & RESUME
         </h3>
-        <h2 className="hero-name" ref={nameRef}>
-          Jashabant Behera
-        </h2>
-        <p className="hero-tagline" ref={taglineRef}></p>
       </div>
 
       <div className="hero-image-container" ref={imageRef}>
@@ -147,6 +143,10 @@ export default function Hero() {
         <DownloadIcon size={16} />
         Download Resume
       </a>
+      <h2 className="hero-name" ref={nameRef}>
+        Jashabant Behera
+      </h2>
+      <p className="hero-tagline" ref={taglineRef}></p>
     </section>
   );
 }

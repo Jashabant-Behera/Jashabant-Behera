@@ -16,69 +16,53 @@ export default function Experience() {
   const collageContainerRef = useRef(null);
   const icons = [<Lightbulb />, <Code2 />, <UserCheck />, <Flame />];
 
-  useEffect(() => {
-    // Animation for experience items
-    experienceItemsRef.current.forEach((item) => {
-      const techTags = item.querySelectorAll(".technology-tag");
-      gsap.from(techTags, {
-        opacity: 0,
-        y: 10,
-        duration: 0.4,
-        stagger: 0.05,
-        scrollTrigger: {
-          trigger: item,
-          start: "top 85%",
-          toggleActions: "play none none none",
-        },
-      });
+ useEffect(() => {
+  // Animation for growth cards
+  growthCardsRef.current.forEach((card, index) => {
+    gsap.from(card, {
+      opacity: 0,
+      x: index % 2 ? 50 : -50,
+      duration: 0.6,
+      delay: index * 0.1,
+      scrollTrigger: {
+        trigger: card,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
     });
+  });
 
-    // Animation for growth cards
-    growthCardsRef.current.forEach((card, index) => {
-      gsap.from(card, {
-        opacity: 0,
-        x: index % 2 ? 50 : -50,
-        duration: 0.6,
-        delay: index * 0.1,
-        scrollTrigger: {
-          trigger: card,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      });
-    });
-
-    // Animation for image collage
-    if (collageContainerRef.current) {
-      const images =
-        collageContainerRef.current.querySelectorAll(".collage-box");
-      gsap.from(images, {
-        opacity: 0,
-        y: 30,
-        duration: 0.6,
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: collageContainerRef.current,
-          start: "top 85%",
-          toggleActions: "play none none none",
-        },
-      });
-    }
-
-    // Section header animation
-    gsap.from(sectionRef.current.querySelectorAll(".section-header"), {
+  // Animation for image collage
+  if (collageContainerRef.current) {
+    const images = collageContainerRef.current.querySelectorAll(".collage-box");
+    gsap.from(images, {
       opacity: 0,
       y: 30,
-      duration: 0.8,
+      duration: 0.6,
+      stagger: 0.1,
       scrollTrigger: {
-        trigger: sectionRef.current,
+        trigger: collageContainerRef.current,
         start: "top 85%",
         toggleActions: "play none none none",
       },
     });
+  }
 
-    return () => ScrollTrigger.getAll().forEach((instance) => instance.kill());
-  }, []);
+  // Section header animation
+  gsap.from(sectionRef.current.querySelectorAll(".section-header"), {
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+    scrollTrigger: {
+      trigger: sectionRef.current,
+      start: "top 85%",
+      toggleActions: "play none none none",
+    },
+  });
+
+  return () => ScrollTrigger.getAll().forEach((instance) => instance.kill());
+}, []);
+
 
   const addExperienceToRefs = (el) => {
     if (el && !experienceItemsRef.current.includes(el)) {

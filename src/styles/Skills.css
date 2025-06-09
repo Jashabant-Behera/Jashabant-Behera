@@ -4,6 +4,7 @@
   font-family: "Rubik", sans-serif;
 }
 
+/* Section Container */
 .section-container {
   width: 100%;
   margin-left: auto;
@@ -12,30 +13,7 @@
   padding-right: 1rem;
 }
 
-@media (min-width: 640px) {
-  .section-container {
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 768px) {
-  .section-container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .section-container {
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .section-container {
-    max-width: 1280px;
-  }
-}
-
+/* Section Heading */
 .section-heading {
   font-size: 3rem;
   font-weight: 700;
@@ -46,6 +24,7 @@
   font-family: "Antonio", sans-serif;
 }
 
+/* Tech Skills */
 .tech-skills {
   padding-bottom: 2rem;
 }
@@ -61,24 +40,14 @@
   font-family: "Rubik", sans-serif;
 }
 
+/* Skills Grid - Default to 1 column for mobile */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 
-@media (min-width: 768px) {
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .skills-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-
+/* Skill Card */
 .skill-card {
   background-color: var(--color-bg);
   padding: 1rem;
@@ -105,6 +74,7 @@
   font-family: "Rubik", sans-serif;
 }
 
+/* Progress Bar */
 .progress-bar {
   width: 100%;
   background-color: var(--color-subtle-gray);
@@ -151,6 +121,7 @@
   font-family: "Rubik", sans-serif;
 }
 
+/* Professional Skills */
 .professional-skills-heading {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -172,7 +143,7 @@
   padding: 0.5rem 1rem;
   background-color: var(--color-bg);
   border: 1px solid var(--color-subtle-gray);
-  border-radius: 9999px;
+  border-radius: 30px;
   font-size: 0.875rem;
   font-weight: 500;
   transition: background-color 0.2s, border-color 0.2s;
@@ -181,7 +152,63 @@
 }
 
 .skill-tag:hover {
-  background-color: rgba(var(--color-accent), 0.1);
+  background-color: var(--color-bg);
   border-color: var(--color-accent);
   color: var(--color-accent);
+}
+
+/* Responsive Styles */
+@media (min-width: 640px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+}
+
+@media (min-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on small desktop */
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+  }
+}
+
+@media (min-width: 1280px) {
+  .skills-grid {
+    grid-template-columns: repeat(5, 1fr); /* 5 columns on large desktop */
+  }
+}
+
+/* Container Widths */
+@media (min-width: 480px) {
+  .section-container {
+    max-width: 480px;
+  }
+}
+
+@media (min-width: 640px) {
+  .section-container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-container {
+    max-width: 1280px;
+  }
 }

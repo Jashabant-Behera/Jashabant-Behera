@@ -1,12 +1,19 @@
+.about {
+  background: var(--color-subtle-gray);
+  font-family: "Rubik", sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+}
+
 .about-section {
   position: relative;
   display: flex;
   align-items: center;
   gap: 3rem;
-  padding: 5rem 2rem;
-  background-color: var(--color-subtle-gray);
-  min-height: 100vh;
-  overflow: hidden;
 }
 
 .image-wrapper {
@@ -54,7 +61,11 @@
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  background: linear-gradient(90deg, var(--color-accent), darken(var(--color-accent), 15%));
+  background: linear-gradient(
+    90deg,
+    var(--color-accent),
+    darken(var(--color-accent), 15%)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: var(--color-text);
@@ -128,7 +139,6 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Specific tag colors */
 .react-tag {
   background-color: rgba(2, 132, 199, 0.1);
   color: #0284c7;
@@ -157,7 +167,6 @@
 
   .image-wrapper {
     width: 100%;
-    margin-bottom: 2rem;
   }
 
   .red-circle {
@@ -172,13 +181,11 @@
   .about-container {
     margin-left: 0;
     padding: 1.5rem;
-    margin-top: 2rem;
     max-width: 100%;
   }
 
   .about-title {
     font-size: 2.2rem;
-    margin-bottom: 1.2rem;
   }
 
   .about-description {
@@ -195,11 +202,11 @@
   .about-title {
     font-size: 1.8rem;
   }
-  
+
   .about-description {
     font-size: 1.1rem;
   }
-  
+
   .skill-tag {
     padding: 0.4rem 1rem;
     font-size: 0.8rem;
