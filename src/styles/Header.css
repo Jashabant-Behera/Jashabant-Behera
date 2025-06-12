@@ -55,7 +55,7 @@
 }
 
 .nav-link {
-  color: var(--color-muted);
+  color: var(--color-black);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -63,6 +63,10 @@
   display: flex;
   align-items: center;
   font-family: "Rubik", sans-serif;
+}
+
+.dark .nav-link{
+  color: var(--color-white);
 }
 
 .nav-link:hover {
@@ -76,7 +80,7 @@
 }
 
 .social-icon {
-  color: var(--color-muted);
+  color: var(--color-black);
   text-decoration: none;
   padding: 0.5rem;
   border-radius: 50%;
@@ -84,6 +88,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.dark .social-icon{
+  color: var(--color-white);
 }
 
 .social-icon:hover {

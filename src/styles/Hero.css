@@ -30,7 +30,6 @@
   color: var(--color-accent);
   transform: scaleY(1.5);
   text-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
 }
 
 .dark .portfolio-title {

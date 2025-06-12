@@ -1,8 +1,11 @@
-/* Projects Section */
 .projects-section {
   padding: 5rem 0;
   background: var(--color-subtle-gray);
   font-family: "Rubik", sans-serif;
+}
+
+.dark .projects-section {
+  background-color: var(--color-black);
 }
 
 .projects-container {
@@ -22,6 +25,10 @@
   letter-spacing: 1px;
 }
 
+.dark .projects-title {
+  color: var(--color-white);
+}
+
 /* Projects Grid */
 .projects-grid {
   display: grid;
@@ -39,11 +46,17 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+.dark .project-card {
+  background-color: var(--color-black);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
 .project-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Project Image Container */
 .project-image-container {
   height: 12rem;
   position: relative;
@@ -52,6 +65,11 @@
   cursor: pointer;
 }
 
+.dark .project-image-container {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Project Image */
 .project-image {
   width: 100%;
   height: 100%;
@@ -63,6 +81,7 @@
   transform: scale(1.03);
 }
 
+/* Image Count Badge */
 .image-count-badge {
   position: absolute;
   bottom: 1rem;
@@ -74,10 +93,12 @@
   font-size: 0.75rem;
 }
 
+/* Project Meta */
 .project-meta {
   padding: 1.5rem;
 }
 
+/* Project Name */
 .project-name {
   font-size: 1.25rem;
   margin-bottom: 0.75rem;
@@ -87,18 +108,28 @@
   transition: color 0.2s ease;
 }
 
+.dark .project-name {
+  color: var(--color-white);
+}
+
 .project-name:hover {
   color: var(--color-accent);
 }
 
+/* Project Description */
 .project-description {
-  color: var(--color-muted);
+  color: var(--color-black);
   margin-bottom: 1rem;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
+.dark .project-description {
+  color: var(--color-white);
+}
+
+/* Project Tags */
 .project-tags {
   display: flex;
   flex-wrap: wrap;
@@ -106,6 +137,7 @@
   margin-bottom: 1.5rem;
 }
 
+/* Project Tag */
 .project-tag {
   padding: 0.25rem 0.75rem;
   font-size: 0.75rem;
@@ -119,11 +151,13 @@
   background-color: rgba(var(--color-accent), 0.2);
 }
 
+/* Project Links */
 .project-links {
   display: flex;
   gap: 1rem;
 }
 
+/* Project Link */
 .project-link {
   display: flex;
   align-items: center;
@@ -146,6 +180,7 @@
   color: white;
 }
 
+/* Icon */
 .icon {
   width: 1rem;
   height: 1rem;
@@ -153,7 +188,7 @@
   color: var(--color-accent);
 }
 
-/* Project Modal */
+/* Project Modal Overlay */
 .project-modal-overlay {
   position: fixed;
   top: 0;
@@ -168,6 +203,7 @@
   padding: 1rem;
 }
 
+/* Project Modal */
 .project-modal {
   background-color: var(--color-white);
   border-radius: 0.75rem;
@@ -179,6 +215,11 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+.dark .project-modal {
+  background-color: var(--color-black);
+}
+
+/* Project Modal Close Button */
 .project-modal-close {
   position: absolute;
   top: 1rem;
@@ -193,27 +234,35 @@
 }
 
 .project-modal-close:hover {
-  color: var(--color-black);
+  color: var(--color-white);
 }
 
+/* Project Modal Image Container */
 .project-modal-image-container {
   height: 24rem;
   position: relative;
   background-color: var(--color-subtle-gray);
 }
 
+.dark .project-modal-image-container {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Project Modal Image */
 .project-modal-image {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
+/* Project Modal Content */
 .project-modal-content {
-  padding: 1.5rem;
+  padding: 0.5rem;
   overflow-y: auto;
-  max-height: calc(90vh - 24rem);
+  max-height: 90vh;
 }
 
+/* Project Modal Title */
 .project-modal-title {
   font-size: 1.75rem;
   font-weight: 700;
@@ -222,24 +271,40 @@
   font-family: "Antonio", sans-serif;
 }
 
+.dark .project-modal-title {
+  color: var(--color-white);
+}
+
+/* Project Modal Description */
 .project-modal-description {
-  color: var(--color-muted);
-  margin-bottom: 1.5rem;
+  color: var(--color-black);
+  margin-bottom: 1rem;
   line-height: 1.6;
 }
 
+.dark .project-modal-description {
+  color: var(--color-white);
+}
+
+/* Project Modal Tech Title */
 .project-modal-tech-title {
   font-weight: 600;
   margin-bottom: 0.75rem;
   color: var(--color-black);
 }
 
+.dark .project-modal-tech-title {
+  color: var(--color-white);
+}
+
+/* Project Modal Buttons */
 .project-modal-buttons {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
 }
 
+/* Project Modal Button */
 .project-modal-button {
   display: flex;
   align-items: center;
@@ -254,6 +319,11 @@
 .project-modal-button.code {
   background-color: rgba(var(--color-black), 0.1);
   color: var(--color-black);
+}
+
+.dark .project-modal-button.code {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
 }
 
 .project-modal-button.code:hover {
@@ -279,7 +349,7 @@
   color: white;
 }
 
-/* Image Navigation */
+/* Image Navigation Button */
 .image-nav-button {
   position: absolute;
   top: 50%;
@@ -309,6 +379,7 @@
   right: 1rem;
 }
 
+/* Image Dots */
 .image-dots {
   position: absolute;
   bottom: 1rem;
@@ -319,6 +390,7 @@
   gap: 0.5rem;
 }
 
+/* Image Dot */
 .image-dot {
   width: 0.5rem;
   height: 0.5rem;
@@ -333,7 +405,7 @@
   background-color: white;
 }
 
-/* Responsive */
+/* Responsive Styles */
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
@@ -365,3 +437,4 @@
     font-size: 2rem;
   }
 }
+

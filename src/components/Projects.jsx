@@ -143,7 +143,7 @@ export default function Projects() {
                       className="project-link"
                     >
                       <ExternalLink className="icon" />
-                      Live Demo
+                      Website
                     </a>
                   )}
                 </div>
@@ -248,7 +248,7 @@ export default function Projects() {
                         className="project-modal-button demo"
                       >
                         <ExternalLink className="icon" />
-                        Live Demo
+                        Visit Website
                       </a>
                     )}
                   </div>

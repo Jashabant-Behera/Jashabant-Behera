@@ -1,7 +1,6 @@
 .about {
   background: var(--color-subtle-gray);
   font-family: "Rubik", sans-serif;
-  min-height: 100vh;
   overflow: hidden;
   text-align: center;
   justify-content: center;
@@ -123,7 +122,7 @@
 .about-subtext {
   font-size: 1.2rem;
   line-height: 1.7;
-  color: var(--color-muted);
+  color: var(--color-black);
   margin-bottom: 2rem;
   font-family: "Rubik", sans-serif;
   font-style: italic;

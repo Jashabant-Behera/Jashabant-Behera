@@ -3,7 +3,7 @@
     "id": 1,
     "title": "AI-Powered Travel Guide",
     "description": "Smart travel planner that generates personalized itineraries, cultural recommendations, and location insights using AI.",
-    "tags": ["React.js", "Node.js", "OpenAI", "MongoDB", "Google Maps API"],
+    "tags": ["React.js", "Node.js", "OpenAI", "MongoDB", "Google API"],
     "images": [
       "/images/projects/ai-travel-1.jpg",
       "/images/projects/ai-travel-2.jpg",
