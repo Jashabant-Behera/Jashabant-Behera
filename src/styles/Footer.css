@@ -1,5 +1,5 @@
 .footer {
-  background-color: rgba(var(--color-bg), 0.8);
+  background-color: rgba(var(--color-white), 0.8);
   backdrop-filter: blur(10px);
   padding: 1rem 0;
   width: 100%;

@@ -5,6 +5,10 @@
   font-family: "Rubik", sans-serif;
 }
 
+.dark .experience-section {
+  background-color: var(--color-black);
+}
+
 .experience-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -21,13 +25,16 @@
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--color-text);
+  color: var(--color-black);
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
   display: inline-block;
 }
 
+.dark .section-title{
+    color: var(--color-white);
+}
 
 .section-subtitle {
   font-size: 1.2rem;
@@ -39,12 +46,18 @@
 
 /* Experience Card */
 .experience-card {
-  background-color: var(--color-bg);
+  background-color: var(--color-white);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   border: 1px solid var(--color-subtle-gray);
   overflow: hidden;
   margin-bottom: 2rem;
+}
+
+.dark .experience-card {
+  background-color: rgb(23, 23, 23);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-white);
 }
 
 .experience-content {
@@ -61,8 +74,12 @@
 .experience-role {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--color-black);
   font-family: "Antonio", sans-serif;
+}
+
+.dark .experience-role {
+  color: var(--color-white);
 }
 
 .experience-company {
@@ -98,6 +115,10 @@
   margin-bottom: 1rem;
   line-height: 1.6;
   color: var(--color-muted);
+}
+
+.dark .achievement-item {
+  color: var(--color-white);
 }
 
 .achievement-item::before {
@@ -156,7 +177,7 @@
 .collage-title {
   font-family: "Antonio", sans-serif;
   font-size: 2rem;
-  color: var(--color-text);
+  color: var(--color-black);
   text-align: center;
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -226,7 +247,7 @@
 }
 
 .collage-caption {
-  color: var(--color-text);
+  color: var(--color-black);
   font-family: "Rubik", sans-serif;
   padding: 8px 2px;
   font-size: 0.9rem;
@@ -264,8 +285,8 @@
 
 @media (max-width: 480px) {
   .collage-wrapper {
-  padding: 10px;
-}
+    padding: 10px;
+  }
   .collage-container {
     columns: 3;
   }
@@ -299,7 +320,7 @@
 
 .growth-card,
 .highlight-card {
-  background-color: var(--color-bg);
+  background-color: var(--color-white);
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
@@ -313,9 +334,13 @@
 
 .growth-card p,
 .highlight-card p {
-  color: var(--color-text);
+  color: var(--color-black);
   line-height: 1.7;
   margin: 0;
+}
+
+.dark .highlight-card p {
+  color: var(--color-white);
 }
 
 .highlight-text {

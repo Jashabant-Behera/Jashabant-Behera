@@ -16,7 +16,7 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
-  color: var(--color-text);
+  color: var(--color-black);
   font-family: "Antonio", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -34,7 +34,7 @@
   border: 1px solid var(--color-subtle-gray);
   border-radius: 0.75rem;
   overflow: hidden;
-  background-color: var(--color-bg);
+  background-color: var(--color-white);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
@@ -81,7 +81,7 @@
 .project-name {
   font-size: 1.25rem;
   margin-bottom: 0.75rem;
-  color: var(--color-text);
+  color: var(--color-black);
   font-weight: 600;
   cursor: pointer;
   transition: color 0.2s ease;
@@ -169,7 +169,7 @@
 }
 
 .project-modal {
-  background-color: var(--color-bg);
+  background-color: var(--color-white);
   border-radius: 0.75rem;
   max-width: 56rem;
   width: 100%;
@@ -193,7 +193,7 @@
 }
 
 .project-modal-close:hover {
-  color: var(--color-text);
+  color: var(--color-black);
 }
 
 .project-modal-image-container {
@@ -218,7 +218,7 @@
   font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--color-text);
+  color: var(--color-black);
   font-family: "Antonio", sans-serif;
 }
 
@@ -231,7 +231,7 @@
 .project-modal-tech-title {
   font-weight: 600;
   margin-bottom: 0.75rem;
-  color: var(--color-text);
+  color: var(--color-black);
 }
 
 .project-modal-buttons {
@@ -252,17 +252,17 @@
 }
 
 .project-modal-button.code {
-  background-color: rgba(var(--color-text), 0.1);
-  color: var(--color-text);
+  background-color: rgba(var(--color-black), 0.1);
+  color: var(--color-black);
 }
 
 .project-modal-button.code:hover {
-  background-color: var(--color-text);
-  color: var(--color-bg);
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
 
 .project-modal-button.code:hover .icon {
-  color: var(--color-bg);
+  color: var(--color-white);
 }
 
 .project-modal-button.demo {

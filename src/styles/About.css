@@ -9,6 +9,10 @@
   padding: 5rem 0;
 }
 
+.dark .about {
+  background: var(--color-black);
+}
+
 .about-section {
   position: relative;
   display: flex;
@@ -57,6 +61,10 @@
   will-change: transform, opacity;
 }
 
+.dark .about-container {
+  background-color: rgba(20, 21, 23, 0.9);
+}
+
 .about-title {
   font-size: 3rem;
   font-weight: 700;
@@ -68,18 +76,26 @@
   );
   -webkit-background-clip: text;
   background-clip: text;
-  color: var(--color-text);
+  color: var(--color-black);
   font-family: "Antonio", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
+.dark .about-title {
+  color: var(--color-white);
+}
+
 .about-description {
   font-size: 1.5rem;
   line-height: 1.8;
-  color: var(--color-text);
+  color: var(--color-black);
   margin-bottom: 1.5rem;
   font-family: "Rubik", sans-serif;
+}
+
+.dark .about-description {
+  color: var(--color-white);
 }
 
 .name-highlight {
@@ -113,6 +129,10 @@
   font-style: italic;
 }
 
+.dark .about-subtext {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .skills-container {
   display: flex;
   flex-wrap: wrap;
@@ -137,6 +157,10 @@
   transform: translateY(-2px);
   background-color: rgba(var(--color-accent), 0.2);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark .skill-tag:hover {
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
 }
 
 .react-tag {

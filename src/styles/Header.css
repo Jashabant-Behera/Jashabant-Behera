@@ -2,12 +2,18 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: rgba(var(--color-bg), 0.7);
+  background-color: rgba(var(--color-white), 0.7);
   backdrop-filter: blur(10px);
   width: 100%;
   height: 70px;
   display: flex;
   align-items: center;
+}
+
+.dark .header {
+  background-color: rgba(var(--color-black), 0.7);
+  color: var(--color-white);
+  border-bottom: 1px solid var(--color-accent);
 }
 
 .header-container {
@@ -23,7 +29,7 @@
 .logo {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--color-black);
   text-decoration: none;
   font-family: "Bebas Neue", sans-serif;
   letter-spacing: 2px;
@@ -31,6 +37,10 @@
   display: flex;
   align-items: center;
   height: 100%;
+}
+
+.dark .logo{
+    color: var(--color-white);
 }
 
 .logo:hover {
@@ -81,7 +91,7 @@
 }
 
 .github-icon:hover {
-  color: var(--color-text);
+  color: var(--color-black);
 }
 
 .linkedin-icon:hover {

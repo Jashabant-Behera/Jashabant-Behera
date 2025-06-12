@@ -4,6 +4,10 @@
   font-family: "Rubik", sans-serif;
 }
 
+.dark .skills-section {
+  background: var(--color-black);
+}
+
 /* Section Container */
 .section-container {
   width: 100%;
@@ -20,8 +24,12 @@
   letter-spacing: 1px;
   text-align: center;
   margin-bottom: 3rem;
-  color: var(--color-text);
+  color: var(--color-black);
   font-family: "Antonio", sans-serif;
+}
+
+.dark .section-heading {
+  color: var(--color-white);
 }
 
 /* Tech Skills */
@@ -34,10 +42,15 @@
   line-height: 1.75rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: var(--color-text);
+  color: var(--color-black);
   border-bottom: 1px solid var(--color-subtle-gray);
   padding-bottom: 0.5rem;
   font-family: "Rubik", sans-serif;
+}
+
+.dark .skills-heading {
+  color: var(--color-white);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Skills Grid - Default to 1 column for mobile */
@@ -49,7 +62,7 @@
 
 /* Skill Card */
 .skill-card {
-  background-color: var(--color-bg);
+  background-color: var(--color-white);
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -57,8 +70,18 @@
   border: 1px solid var(--color-subtle-gray);
 }
 
+.dark .skill-card {
+  background-color: rgba(20, 21, 23, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
 .skill-card:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.dark .skill-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .skill-header {
@@ -70,8 +93,12 @@
 .skill-name {
   margin-left: 0.5rem;
   font-weight: 500;
-  color: var(--color-text);
+  color: var(--color-black);
   font-family: "Rubik", sans-serif;
+}
+
+.dark .skill-name {
+  color: var(--color-white);
 }
 
 /* Progress Bar */
@@ -80,6 +107,10 @@
   background-color: var(--color-subtle-gray);
   border-radius: 9999px;
   height: 0.5rem;
+}
+
+.dark .progress-bar {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .progress-fill {
@@ -114,11 +145,19 @@
   font-family: "Rubik", sans-serif;
 }
 
+.dark .skill-level {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .skill-description {
   font-size: 0.75rem;
   color: var(--color-muted);
   margin-top: 0.5rem;
   font-family: "Rubik", sans-serif;
+}
+
+.dark .skill-description {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Professional Skills */
@@ -127,10 +166,15 @@
   line-height: 1.75rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: var(--color-text);
+  color: var(--color-black);
   border-bottom: 1px solid var(--color-subtle-gray);
   padding-bottom: 0.5rem;
   font-family: "Rubik", sans-serif;
+}
+
+.dark .professional-skills-heading {
+  color: var(--color-white);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
 .skills-container {
@@ -141,18 +185,30 @@
 
 .skill-tag {
   padding: 0.5rem 1rem;
-  background-color: var(--color-bg);
+  background-color: var(--color-white);
   border: 1px solid var(--color-subtle-gray);
   border-radius: 30px;
   font-size: 0.875rem;
   font-weight: 500;
   transition: background-color 0.2s, border-color 0.2s;
-  color: var(--color-text);
+  color: var(--color-black);
   font-family: "Rubik", sans-serif;
 }
 
+.dark .skill-tag {
+  background-color: rgba(20, 21, 23, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+}
+
 .skill-tag:hover {
-  background-color: var(--color-bg);
+  background-color: var(--color-white);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.dark .skill-tag:hover {
+  background-color: rgba(20, 21, 23, 0.9);
   border-color: var(--color-accent);
   color: var(--color-accent);
 }

@@ -7,7 +7,11 @@
   align-items: center;
   justify-content: center;
   background-color: var(--color-subtle-gray);
-  color: var(--color-text);
+  color: var(--color-black);
+}
+
+.dark .hero-section {
+  background-color: var(--color-black);
 }
 
 .hero-background-text {
@@ -29,15 +33,24 @@
   transition: all 0.3s ease;
 }
 
+.dark .portfolio-title {
+  text-shadow: 8px 8px 0px rgba(255, 255, 255, 0.1);
+}
+
 .portfolio-subtitle {
   position: absolute;
   right: 35px;
   bottom: 0;
   font-family: "Bebas Neue", sans-serif;
   font-size: 100px;
-  color: var(--color-text);
+  color: var(--color-black);
   text-shadow: 4px 4px 0px rgba(255, 255, 255, 0.3);
   transition: all 0.3s ease;
+}
+
+.dark .portfolio-subtitle {
+  color: var(--color-white);
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
 }
 
 .hero-image-container {
@@ -60,6 +73,10 @@
   filter: grayscale(0%) contrast(120%);
 }
 
+.dark .hero-image {
+  filter: grayscale(20%) contrast(110%) brightness(90%);
+}
+
 .hero-name {
   position: absolute;
   font-family: "Parisienne", cursive;
@@ -72,6 +89,12 @@
   z-index: 999;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  color: var(--color-black);
+}
+
+.dark .hero-name {
+  color: var(--color-white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .download-btn {
@@ -124,6 +147,11 @@
   transition: all 0.3s ease;
 }
 
+.dark .hero-tagline {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+}
+
 /* Tablet Styles */
 @media (min-width: 768px) and (max-width: 1024px) {
   .hero-section {
@@ -165,6 +193,11 @@
     bottom: 15%;
     padding: 10px;
     color: white;
+    mix-blend-mode: difference;
+    user-select: none;
+  }
+
+  .dark .hero-name {
     mix-blend-mode: difference;
     user-select: none;
   }
@@ -237,15 +270,6 @@
     align-items: flex-start;
     z-index: 2;
     margin-top: 40px;
-  }
-
-  .hero-name,
-  .hero-tagline,
-  .download-btn {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    margin: 10px 0;
   }
 
   .hero-name,
