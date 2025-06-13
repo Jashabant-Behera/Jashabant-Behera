@@ -112,8 +112,8 @@ export default function Contact() {
                 <a href="tel:+918118006481" className="contact-clickable">
                   <FaPhone className="contact-icon phone" />
                   <div className="contact-text">
-                    <h4>Phone</h4>
-                    <p>8118006481 / 7735872336</p>
+                    <h4 className="contact-text">Phone</h4>
+                    <p className="contact-text" >8118006481 / 7735872336</p>
                   </div>
                 </a>
               </li>
@@ -128,8 +128,8 @@ export default function Contact() {
                 >
                   <FaWhatsapp className="contact-icon whatsapp" />
                   <div className="contact-text">
-                    <h4>WhatsApp</h4>
-                    <p>8118006481</p>
+                    <h4 className="contact-text" >WhatsApp</h4>
+                    <p className="contact-text" >8118006481</p>
                   </div>
                 </a>
               </li>
@@ -142,8 +142,8 @@ export default function Contact() {
                 >
                   <FaEnvelope className="contact-icon email" />
                   <div className="contact-text">
-                    <h4>Email</h4>
-                    <p>jeetbehera143@gmail.com</p>
+                    <h4 className="contact-text" >Email</h4>
+                    <p className="contact-text" >jeetbehera143@gmail.com</p>
                   </div>
                 </a>
               </li>
@@ -158,8 +158,8 @@ export default function Contact() {
                 >
                   <FaMapMarkerAlt className="contact-icon address" />
                   <div className="contact-text">
-                    <h4>Address</h4>
-                    <p>Amin Line, Koraput, Odisha 764020</p>
+                    <h4 className="contact-text" >Address</h4>
+                    <p className="contact-text" >Amin Line, Koraput, Odisha 764020</p>
                   </div>
                 </a>
               </li>
