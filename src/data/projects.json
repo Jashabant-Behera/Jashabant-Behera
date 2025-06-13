@@ -5,12 +5,18 @@
     "description": "Smart travel planner that generates personalized itineraries, cultural recommendations, and location insights using AI.",
     "tags": ["React.js", "Node.js", "OpenAI", "MongoDB", "Google API"],
     "images": [
-      "/images/projects/ai-travel-1.jpg",
-      "/images/projects/ai-travel-2.jpg",
-      "/images/projects/ai-travel-3.jpg"
+      "/projects/ai-travel (1).png",
+      "/projects/ai-travel (2).png",
+      "/projects/ai-travel (3).png",
+      "/projects/ai-travel (4).png",
+      "/projects/ai-travel (5).png",
+      "/projects/ai-travel (6).png",
+      "/projects/ai-travel (7).png",
+      "/projects/ai-travel (8).png",
+      "/projects/ai-travel (9).png"
     ],
     "github": "https://github.com/Jashabant-Behera/AI-Travel-Guide",
-    "demo": "https://ai-travel-planner.vercel.app"
+    "demo": "https://ai-travel-guide-eight.vercel.app/"
   },
   {
     "id": 2,
@@ -18,11 +24,21 @@
     "description": "Resume analyzer and AI-based cover letter generator that ensures ATS-friendly formatting using OpenAI and Supabase.",
     "tags": ["Next.js", "Node.js", "OpenAI", "Supabase", "PDF Parse"],
     "images": [
-      "/images/projects/profile-ai-1.jpg",
-      "/images/projects/profile-ai-2.jpg"
+      "/projects/profile-ai (1).png",
+      "/projects/profile-ai (2).png",
+      "/projects/profile-ai (3).png",
+      "/projects/profile-ai (4).png",
+      "/projects/profile-ai (5).png",
+      "/projects/profile-ai (6).png",
+      "/projects/profile-ai (7).png",
+      "/projects/profile-ai (8).png",
+      "/projects/profile-ai (9).png",
+      "/projects/profile-ai (10).png",
+      "/projects/profile-ai (11).png",
+      "/projects/profile-ai (12).png"
     ],
     "github": "https://github.com/Jashabant-Behera/ProFile-AI",
-    "demo": "https://profile-ai.vercel.app"
+    "demo": "https://profile-ai-lemon.vercel.app/"
   },
   {
     "id": 3,
@@ -30,22 +46,36 @@
     "description": "Authentication and role-based access system using Next.js and custom JWT auth with token persistence and role control.",
     "tags": ["Next.js", "Express", "JWT", "MongoDB"],
     "images": [
-      "/images/projects/ape-auth-1.jpg",
-      "/images/projects/ape-auth-2.jpg"
+      "/projects/ape-auth (1).png",
+      "/projects/ape-auth (2).png",
+      "/projects/ape-auth (3).png",
+      "/projects/ape-auth (4).png",
+      "/projects/ape-auth (5).png",
+      "/projects/ape-auth (6).png",
+      "/projects/ape-auth (7).png",
+      "/projects/ape-auth (8).png",
+      "/projects/ape-auth (9).png",
+      "/projects/ape-auth (10).png",
+      "/projects/ape-auth (11).png"
     ],
-    "github": "https://github.com/Jashabant-Behera/Ape-Authorization",
-    "demo": "https://ape-auth-demo.vercel.app"
+    "github": "https://github.com/Jashabant-Behera/Ape-Auth",
+    "demo": "https://ape-auth.vercel.app/"
   },
   {
     "id": 4,
     "title": "Kanban Board",
-    "description": "Trello-style Kanban board for task management with drag-and-drop, persistence, and responsive UI for portfolio showcase.",
+    "description": "Kanban board for task management with drag-and-drop, persistence, and responsive UI for portfolio showcase.",
     "tags": ["React.js", "Tailwind CSS", "Framer Motion"],
     "images": [
-      "/images/projects/kanban-1.jpg",
-      "/images/projects/kanban-2.jpg"
+      "/projects/kanban (1).png",
+      "/projects/kanban (2).png",
+      "/projects/kanban (3).png",
+      "/projects/kanban (4).png",
+      "/projects/kanban (5).png",
+      "/projects/kanban (6).png",
+      "/projects/kanban (7).png"
     ],
     "github": "https://github.com/Jashabant-Behera/Kanban-Board",
-    "demo": "https://kanban-jashabant.vercel.app"
+    "demo": "https://jashabant-behera.github.io/Kanban-Board/"
   }
 ]

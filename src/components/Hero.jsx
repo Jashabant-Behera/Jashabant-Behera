@@ -134,7 +134,7 @@ export default function Hero() {
       </div>
 
       <a
-        href="/Jashabant_Behera_Resume.pdf"
+        href="/resume/Jashabant_Behera_Resume.pdf"
         download="Jashabant_Behera_Resume.pdf"
         className="download-btn"
         ref={buttonRef}
