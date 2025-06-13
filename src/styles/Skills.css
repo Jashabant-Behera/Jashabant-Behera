@@ -139,7 +139,7 @@
 
 .skill-level {
   font-size: 0.75rem;
-  color: var(--color-muted);
+  color: var(--color-black);
   margin-top: 0.25rem;
   font-family: "Rubik", sans-serif;
 }
@@ -150,7 +150,7 @@
 
 .skill-description {
   font-size: 0.75rem;
-  color: var(--color-muted);
+  color: var(--color-black);
   margin-top: 0.5rem;
   font-family: "Rubik", sans-serif;
 }
