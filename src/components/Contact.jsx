@@ -12,7 +12,6 @@ import {
 import Image from "next/image";
 import "../styles/Contact.css";
 
-// Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {

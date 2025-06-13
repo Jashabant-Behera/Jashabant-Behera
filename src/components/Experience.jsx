@@ -93,7 +93,7 @@ export default function Experience() {
               className="experience-card"
               ref={addExperienceToRefs}
             >
-              {/* Pinterest-style Image Collage */}
+
               {exp.images && exp.work && (
                 <div className="collage-wrapper">
                   <div className="collage-container" ref={collageContainerRef}>

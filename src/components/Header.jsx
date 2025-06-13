@@ -48,7 +48,7 @@ export default function Header() {
 
         <div className="social-icons">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/Jashabant-Behera"
             target="_blank"
             rel="noopener noreferrer"
             className="social-icon github-icon"
@@ -56,14 +56,17 @@ export default function Header() {
             <FaGithub size={20} />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/jashabant-behera-34bbb4b6/"
             target="_blank"
             rel="noopener noreferrer"
             className="social-icon linkedin-icon"
           >
             <FaLinkedin size={20} />
           </a>
-          <a href="mailto:you@example.com" className="social-icon email-icon">
+          <a
+            href="mailto:jeetbehera143@gmail.com"
+            className="social-icon email-icon"
+          >
             <FaEnvelope size={20} />
           </a>
           <ThemeToggle />

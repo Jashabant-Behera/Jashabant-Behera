@@ -53,7 +53,6 @@
   border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Skills Grid - Default to 1 column for mobile */
 .skills-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -216,25 +215,25 @@
 /* Responsive Styles */
 @media (min-width: 640px) {
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
 @media (min-width: 768px) {
   .skills-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns on small desktop */
+    grid-template-columns: repeat(3, 1fr); 
   }
 }
 
 @media (min-width: 1024px) {
   .skills-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media (min-width: 1280px) {
   .skills-grid {
-    grid-template-columns: repeat(5, 1fr); /* 5 columns on large desktop */
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
