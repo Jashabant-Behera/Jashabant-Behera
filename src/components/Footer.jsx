@@ -10,20 +10,20 @@ export default function Footer() {
 
         <div className="footer-social-links">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/Jashabant-Behera"
             target="_blank"
             className="social-link github-icon"
           >
             <Github size={18} />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/jashabant-behera-34bbb4b6/"
             target="_blank"
             className="social-link linkedin-icon"
           >
             <Linkedin size={18} />
           </a>
-          <a href="mailto:you@example.com" className="social-link email-icon">
+          <a href="mailto:jeetbehera143@gmail.com" className="social-link email-icon">
             <Mail size={18} />
           </a>
         </div>
